@@ -1,7 +1,10 @@
 package com.ddj.dudujia.activity
 
+import android.app.ActionBar
 import android.content.DialogInterface
 import android.content.Intent
+import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
 import android.view.KeyEvent
 import android.view.View
