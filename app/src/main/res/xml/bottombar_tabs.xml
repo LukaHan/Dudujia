@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        barSizeWhenelected="50sp"
+        icon="@drawable/tab_icon_home"
+        id="@+id/tab_home"
+        title="首页" />
+    <tab
+        icon="@drawable/tab_icon_service"
+        id="@+id/tab_service"
+        title="服务" />
+    <tab
+        icon="@drawable/tab_icon_car"
+        id="@+id/tab_car"
+        title="爱车" />
+    <tab
+        icon="@drawable/tab_icon_mine"
+        id="@+id/tab_mine"
+        title="我的" />
+</tabs>

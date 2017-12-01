@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--标题栏-->
+    <declare-styleable name="TitleView">
+        <attr name="titleText" format="string" />
+        <attr name="titleMoreText" format="string" />
+        <attr name="titleColor" format="color" />
+        <attr name="showBack" format="boolean" />
+        <attr name="backBlack" format="boolean" />
+        <attr name="titleBackground" format="color" />
+    </declare-styleable>
+
+    <!--商品信息-->
+    <declare-styleable name="GoodsView">
+        <attr name="goodsName" format="string" />
+        <attr name="goodsPic" format="reference" />
+        <attr name="goodsPicHeight" format="dimension" />
+        <attr name="goodsUnit" format="string" />
+        <attr name="goodsPrice" format="string" />
+    </declare-styleable>
+
+
+    <!--账户管理Item-->
+    <declare-styleable name="accountItemManagerView">
+        <attr name="accountManagerImg" format="reference" />
+        <attr name="accountManagerTitle" format="string" />
+        <attr name="accountManagerRight" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="AmountView">
+        <!-- 左右2边+-按钮的宽度 -->
+        <attr name="btnWidth" format="dimension" />
+        <!-- 中间TextView的宽度 -->
+        <attr name="tvWidth" format="dimension" />
+        <!--<attr name="tvColor" format="color"/>-->
+        <attr name="tvTextSize" format="dimension"/>
+        <attr name="btnTextSize" format="dimension"/>
+    </declare-styleable>
+</resources>
