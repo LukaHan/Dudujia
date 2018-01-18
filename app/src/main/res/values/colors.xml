@@ -13,6 +13,7 @@
     <color name="gray66">#666666</color>
     <color name="gray99">#999999</color>
     <color name="grayF4">#F4F4F4</color>
+    <color name="grayF6">#F6F6F6</color>
     <color name="grayF8">#F8F8F8</color>
     <color name="white">#ffffff</color>
     <color name="background">#F3F4F6</color>
@@ -30,4 +31,7 @@
     <color name="green">#4AC678</color>
     <color name="web_green">#4ac678</color>
     <color name="web_pink">#F64B88</color>
+
+
+    <color name="mine_bg_blue">#384887</color>
 </resources>

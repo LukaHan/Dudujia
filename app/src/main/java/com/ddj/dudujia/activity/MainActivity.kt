@@ -1,11 +1,8 @@
 package com.ddj.dudujia.activity
 
-import android.app.ActionBar
-import android.content.DialogInterface
 import android.content.Intent
-import android.graphics.Color
-import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.KeyEvent
 import android.view.View
 import com.ddj.dudujia.R
@@ -16,6 +13,9 @@ import com.ddj.dudujia.fragment.HomeFragment
 import com.ddj.dudujia.fragment.MineFragment
 import com.ddj.dudujia.fragment.ServiceFragment
 import com.first.basket.utils.ToastUtil
+import com.fm.openinstall.OpenInstall
+import com.fm.openinstall.listener.AppWakeUpAdapter
+import com.fm.openinstall.model.AppData
 import com.github.ybq.android.spinkit.style.DoubleBounce
 import com.roughike.bottombar.BottomBar
 import com.roughike.bottombar.BottomBarTab
@@ -24,7 +24,7 @@ import kotlinx.android.synthetic.main.layout_loading.*
 import java.util.*
 
 
-class MainActivity : BaseActivity(){
+class MainActivity : BaseActivity() {
     companion object {
         private lateinit var instance: MainActivity
         fun getInstance1(): MainActivity {
@@ -51,6 +51,23 @@ class MainActivity : BaseActivity(){
         instance = this
         initView()
         initData()
+
+        OpenInstall.getWakeUp(intent, wakeUpAdapter)
+    }
+
+    override fun onNewIntent(intent: Intent?) {
+        super.onNewIntent(intent)
+        OpenInstall.getWakeUp(intent, wakeUpAdapter)
+    }
+
+    var wakeUpAdapter: AppWakeUpAdapter = object : AppWakeUpAdapter() {
+        override fun onWakeUp(appData: AppData) {
+            //获取渠道数据
+            val channelCode = appData.getChannel()
+            //获取绑定数据
+            val bindData = appData.getData()
+            Log.d("OpenInstall", "getWakeUp : wakeupData = " + appData.toString())
+        }
     }
 
     private fun initView() {
@@ -99,7 +116,7 @@ class MainActivity : BaseActivity(){
 //            if (getCurrentPage() == 2 && (fragmentList[2] as ActiveFragment).setBack()) {
 //                return true
 //            } else
-                if (event.action == KeyEvent.ACTION_DOWN) {
+            if (event.action == KeyEvent.ACTION_DOWN) {
                 if (System.currentTimeMillis() - exitTime > 1000) {
                     ToastUtil.showToast("双击退出应用")
                     exitTime = System.currentTimeMillis()
@@ -161,5 +178,10 @@ class MainActivity : BaseActivity(){
 
     private fun getCurrentPage(): Int {
         return bottomBar.currentTabPosition
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+//        wakeUpAdapter = null
     }
 }

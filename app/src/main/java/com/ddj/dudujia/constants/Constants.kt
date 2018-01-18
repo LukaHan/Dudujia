@@ -9,10 +9,10 @@ class Constants {
     companion object {
         val PIC_URL: String = "https://img1.tking.cn/assets/img/2jrRKbfyDn.jpg"
 
-        val BASE_API: String = "http://api.yhclzgc.com/API/"
+        val BASE_API: String = "http://api.dudujia.com/ClientAPI.php/"
         val BASE_WECHAT_API: String = "http://api.yhclzgc.com/API/"
 
-        val BASE_IMG_URL: String = "http://api.yhclzgc.com/yhclzgc/img"
+        val BASE_IMG_URL: String = "http://img.dudujia.com/"
 
 
         var WECHAT_APP_ID = "wx7b4dcaf398daa066"
