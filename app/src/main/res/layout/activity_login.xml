@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rlCodeView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.ddj.dudujia.view.TitleView
+        android:id="@+id/titleView"
+        android:layout_width="match_parent"
+        app:backBlack="false"
+        android:layout_height="wrap_content"
+        app:titleBackground="@color/colorMain"
+        app:titleColor="@color/white"
+        app:titleText="登录" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="50dp"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="手机号" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/etPhone"
+                style="@style/LoginInputStyle"
+                android:background="@null"
+                android:inputType="numberDecimal"
+                android:maxLength="11" />
+
+            <Button
+                android:id="@+id/btSendCode"
+                style="@style/SendCodeButtonStyle"
+                android:gravity="center" />
+        </RelativeLayout>
+
+        <include layout="@layout/layout_line" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="验证码" />
+
+        <EditText
+            android:id="@+id/etCode"
+            style="@style/LoginInputStyle"
+            android:background="@null"
+            android:inputType="numberDecimal"
+            android:maxLength="11" />
+
+        <include layout="@layout/layout_line" />
+
+        <Button
+            android:id="@+id/btLogin"
+            style="@style/ButtonStyle"
+            android:background="@color/colorMain"
+            android:text="登录" />
+    </LinearLayout>
+
+</LinearLayout>

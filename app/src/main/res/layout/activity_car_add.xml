@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.ddj.dudujia.view.TitleView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:titleText="添加车辆" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="车牌号码"
+            android:textColor="@color/gray33"
+            android:textSize="17dp" />
+
+        <EditText
+            android:id="@+id/etLicensePlate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:background="@null"
+            android:hint="车牌号码"
+            android:textColor="@color/gray33"
+            android:textSize="14dp" />
+    </LinearLayout>
+
+    <include
+        layout="@layout/layout_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="10dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="选择车型"
+            android:textColor="@color/gray33"
+            android:textSize="17dp" />
+
+        <android.support.v7.widget.AppCompatCheckBox
+            android:id="@+id/cbCarSamll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:text="小型车" />
+
+        <android.support.v7.widget.AppCompatCheckBox
+            android:id="@+id/cbCarLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="大型车" />
+
+    </LinearLayout>
+
+    <include
+        layout="@layout/layout_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="10dp" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="发动机号"
+            android:textColor="@color/gray33"
+            android:textSize="17dp" />
+
+        <EditText
+            android:maxLength="9"
+            android:id="@+id/etEngineNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:background="@null"
+            android:hint="用于核实车主本人"
+            android:textColor="@color/gray33"
+            android:textSize="14dp" />
+    </LinearLayout>
+
+    <include
+        layout="@layout/layout_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="10dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="VIN"
+            android:textColor="@color/gray33"
+            android:textSize="17dp" />
+
+        <EditText
+            android:id="@+id/etVin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:background="@null"
+            android:hint="用于核实车主本人"
+            android:maxLength="17"
+            android:textColor="@color/gray33"
+            android:textSize="14dp" />
+    </LinearLayout>
+
+    <android.support.v7.widget.AppCompatCheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="我已同意《违章代缴协议》\n授权笃笃驾使用我的个人信息用于查询违章查询" />
+
+    <Button
+        android:id="@+id/btQuery"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="70dp"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:text="查询"
+        android:textColor="@color/gray33"
+        android:textSize="18sp" />
+
+</LinearLayout>
