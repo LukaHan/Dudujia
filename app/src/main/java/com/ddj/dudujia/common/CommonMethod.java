@@ -725,4 +725,8 @@ public class CommonMethod {
         Date curDate = new Date(System.currentTimeMillis());
         return formatter.format(curDate);
     }
+
+    public static String getUserId() {
+        return SPUtil.getString(StaticValue.USER_ID, "");
+    }
 }

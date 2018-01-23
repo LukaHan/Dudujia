@@ -12,6 +12,7 @@ import com.ddj.dudujia.base.CarListBean;
 import com.ddj.dudujia.common.CommonMethod;
 import com.ddj.dudujia.utils.ImageUtils;
 import com.first.basket.common.CommonMethod1;
+import com.first.basket.utils.LogUtils;
 
 import java.util.List;
 
@@ -22,22 +23,18 @@ import java.util.List;
 public class CarListAdapter extends RecyclerView.Adapter<CarListAdapter.MyViewHolder> {
     private Context context;
     private List<CarListBean.CarBean> mDatas;
-    private OnRecyclerViewItemClickListener mOnItemClickListener;
-    private OnAddItemClickListener onAddItemClickListener;
-    private OnAmountChangeListener mOnAmountChangeListener;
+    private OnItemClickListener mOnItemClickListener;
     private MyViewHolder holder;
     private int layoutPosition;
 
-    public interface OnRecyclerViewItemClickListener {
+    public interface OnItemClickListener {
+        void onBaoyangItemClick(View view, CarListBean.CarBean data, int position);
+
+        void onWeizhangItemClick(View view, CarListBean.CarBean data, int position);
+
+        void onJianceItemClick(View view, CarListBean.CarBean data, int position);
+
         void onItemClick(View view, CarListBean.CarBean data, int position);
-    }
-
-    public interface OnAddItemClickListener {
-        void onAddClick(View view, CarListBean.CarBean data, int position);
-    }
-
-    public interface OnAmountChangeListener {
-        void onAmountChange(View imageView, int position);
     }
 
     public CarListAdapter(Context context, List<CarListBean.CarBean> data) {
@@ -45,16 +42,8 @@ public class CarListAdapter extends RecyclerView.Adapter<CarListAdapter.MyViewHo
         this.mDatas = data;
     }
 
-    public void setOnItemClickListener(OnRecyclerViewItemClickListener listener) {
+    public void setOnItemClickListener(OnItemClickListener listener) {
         this.mOnItemClickListener = listener;
-    }
-
-    public void setOnAddItemClickListener(OnAddItemClickListener listener) {
-        this.onAddItemClickListener = listener;
-    }
-
-    public void setOnAmountChangeListener(OnAmountChangeListener listener) {
-        this.mOnAmountChangeListener = listener;
     }
 
     @Override
@@ -85,10 +74,22 @@ public class CarListAdapter extends RecyclerView.Adapter<CarListAdapter.MyViewHo
             }
         });
 
-        holder.ivImg.setOnClickListener(new View.OnClickListener() {
+        holder.tvBaoyang.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                onAddItemClickListener.onAddClick(holder.itemView, (CarListBean.CarBean) holder.itemView.getTag(), layoutPosition);
+            public void onClick(View v) {
+                mOnItemClickListener.onBaoyangItemClick(holder.itemView, (CarListBean.CarBean) holder.itemView.getTag(), layoutPosition);
+            }
+        });
+        holder.tvWeizhang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mOnItemClickListener.onWeizhangItemClick(holder.itemView, (CarListBean.CarBean) holder.itemView.getTag(), layoutPosition);
+            }
+        });
+        holder.tvJiance.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mOnItemClickListener.onJianceItemClick(holder.itemView, (CarListBean.CarBean) holder.itemView.getTag(), layoutPosition);
             }
         });
     }

@@ -12,6 +12,8 @@ import com.ddj.dudujia.fragment.CarFragment
 import com.ddj.dudujia.fragment.HomeFragment
 import com.ddj.dudujia.fragment.MineFragment
 import com.ddj.dudujia.fragment.ServiceFragment
+import com.ddj.dudujia.utils.CBase64Util
+import com.first.basket.utils.LogUtils
 import com.first.basket.utils.ToastUtil
 import com.fm.openinstall.OpenInstall
 import com.fm.openinstall.listener.AppWakeUpAdapter
@@ -53,6 +55,8 @@ class MainActivity : BaseActivity() {
         initData()
 
         OpenInstall.getWakeUp(intent, wakeUpAdapter)
+
+        LogUtils.d("解密："+CBase64Util.decode("7bT1_vf4-PP61fny87SstLS6tOXhtKyip6S6tOX-tKyhpaS6tOXmtKy0pbijtLq08eC0rLTB8_TR2ranuKa2vtnm8_jR2rbTxbakuKa21f7k-fv_4_u_tLq08eS0rLTX8uTz-Pm2vsLbv7ajpaa0urT6_7SstKevpLinoK64pLiktLq09bSsp7q09-b9tKy0tLq05uG0rKa6tPnltKy09_jy5Pn_8rS6tPnl4PPktKy0oLimuKe0urT35ub98--0rLT48aWvpPO0urTgtKy0p7imuKa06w=="))
     }
 
     override fun onNewIntent(intent: Intent?) {

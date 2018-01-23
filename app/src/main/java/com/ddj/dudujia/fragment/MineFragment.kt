@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.ddj.dudujia.R
 import com.ddj.dudujia.activity.LoginActivity
+import com.ddj.dudujia.activity.OfflineReportActivity
 import com.ddj.dudujia.base.BaseFragment
 import kotlinx.android.synthetic.main.fragment_mine.*
 import org.jetbrains.anko.sdk25.coroutines.onClick
@@ -27,6 +28,9 @@ class MineFragment : BaseFragment() {
     private fun initView() {
         tvNickname.onClick {
             startActivity(Intent(activity, LoginActivity::class.java))
+        }
+        rlMyReport.onClick {
+            startActivity(Intent(activity, OfflineReportActivity::class.java))
         }
     }
 }

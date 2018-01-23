@@ -22,11 +22,12 @@ class BaseRecyclerAdapter<T, K : BaseRecyclerAdapter.ViewHolder<T>>(val layoutRe
         holder.bindForecast(items[position])
         holder.itemView.tag = position
 
-        holder.itemView.setOnClickListener {
-            if (holder.layoutPosition == position) {
-                LogUtils.d("选中：" + position)
-            }
-        }
+//        holder.itemView.setOnClickListener {
+//            if (holder.layoutPosition == position) {
+//                holder.itemView.performClick()
+////                LogUtils.d("选中：" + position)
+//            }
+//        }
     }
 
     override fun getItemCount() = items.size

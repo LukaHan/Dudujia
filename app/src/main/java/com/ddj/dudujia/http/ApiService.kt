@@ -2,11 +2,10 @@ package com.first.basket.http
 
 import com.ddj.dudujia.base.BaseBean
 import com.ddj.dudujia.base.CarListBean
-import com.ddj.dudujia.bean.CodeBean
-import com.ddj.dudujia.bean.HomeBean
-import com.ddj.dudujia.bean.LoginBean
+import com.ddj.dudujia.bean.*
 import com.ddj.dudujia.http.HttpResult
 import retrofit2.http.Field
+import retrofit2.http.FieldMap
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.POST
 import rx.Observable
@@ -36,10 +35,16 @@ interface ApiService {
     @POST("ClientAPI.php")
     fun getUserInfo(@Field("action") action: String, @Field("phone") phone: String, @Field("userid") userid: String): Observable<HttpResult<BaseBean>>
 
-    //我的爱车
+    //我的爱车列表
     @FormUrlEncoded
     @POST("ClientAPI.php")
-    fun getMyCar(@Field("action") action: String,@Field("userid") userid: String): Observable<HttpResult<CarListBean>>
+    fun getMyCar(@Field("action") action: String, @Field("userid") userid: String): Observable<HttpResult<CarListBean>>
+
+
+    //获取车辆详细信息
+    @FormUrlEncoded
+    @POST("ClientAPI.php")
+    fun getMyCarDetail(@Field("action") action: String, @Field("userid") userid: String, @Field("licenseplate") licenseplate: String, @Field("vin") vin: String): Observable<HttpResult<CarDetailBean>>
 
     //添加我的爱车
     @FormUrlEncoded
@@ -50,4 +55,25 @@ interface ApiService {
     @FormUrlEncoded
     @POST("ClientAPI.php")
     fun doIlleagalQuery(@Field("action") action: String, @Field("userid") userid: String, @Field("licenseplate") licenseplate: String, @Field("cartype") cartype: String, @Field("enginenumber") enginenumber: String, @Field("vin") vin: String): Observable<HttpResult<BaseBean>>
+
+
+    //立即预约界面
+    @FormUrlEncoded
+    @POST("ClientAPI.php")
+    fun getReservation(@Field("action") action: String, @Field("userid") userid: String): Observable<HttpResult<ReservationBean>>
+
+    //获取线下检测报告列表
+    @FormUrlEncoded
+    @POST("ClientAPI.php")
+    fun getOfflineReportList(@Field("action") action: String, @Field("userid") userid: String): Observable<HttpResult<OfflineReportBean>>
+
+    //获取线下检测报告列表
+    @FormUrlEncoded
+    @POST("ClientAPI.php")
+    fun getOfflineReport(@Field("action") action: String, @Field("offlinereportid") offlinereportid: String): Observable<HttpResult<ReportBasicBean>>
+
+    //支付宝支付线下检测费用
+    @FormUrlEncoded
+    @POST("ClientAPI.php")
+    fun doPayForAlipay(@Field("action") action: String, @FieldMap map: HashMap<String, String>): Observable<HttpResult<BaseBean>>
 }

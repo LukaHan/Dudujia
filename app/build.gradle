@@ -67,4 +67,6 @@ dependencies {
     kapt 'com.github.bumptech.glide:compiler:4.1.1'
     compile files('libs/OpenInstall_v2.1.0')
     implementation files('libs/OpenInstall_v2.1.1 2.jar')
+    implementation files('libs/alipaySdk-20170922.jar')
+    implementation files('libs/AXmlResourceParser.jar')
 }

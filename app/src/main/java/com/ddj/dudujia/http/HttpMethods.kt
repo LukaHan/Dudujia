@@ -31,6 +31,7 @@ private constructor() {
                 .addInterceptor(CurlLoggerInterceptor())
                 .connectTimeout(DEFAULT_TIMEOUT.toLong(), TimeUnit.SECONDS)
                 .readTimeout(DEFAULT_TIMEOUT.toLong(), TimeUnit.SECONDS)
+                .writeTimeout(DEFAULT_TIMEOUT.toLong(), TimeUnit.SECONDS)
 
         retrofit = Retrofit.Builder()
                 .client(builder.build())

@@ -6,7 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.ddj.dudujia.R
+import com.ddj.dudujia.activity.CarBasicActivity
 import com.ddj.dudujia.activity.IlleagalActivity
+import com.ddj.dudujia.activity.JianceActivity
+import com.ddj.dudujia.activity.JianceCenterActivity
 import com.ddj.dudujia.base.BaseFragment
 import kotlinx.android.synthetic.main.fragment_service.*
 import org.jetbrains.anko.sdk25.coroutines.onClick
@@ -28,7 +31,11 @@ class ServiceFragment : BaseFragment() {
 
     private fun initListener() {
         rlWeizhang.onClick {
-            startActivity(Intent(activity, IlleagalActivity::class.java))
+//            startActivity(Intent(activity, IlleagalActivity::class.java))
+            startActivity(Intent(activity, CarBasicActivity::class.java))
+        }
+        rlJiance.onClick {
+            startActivity(Intent(activity, JianceActivity::class.java))
         }
 
     }

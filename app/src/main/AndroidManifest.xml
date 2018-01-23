@@ -38,6 +38,13 @@
         <activity android:name=".activity.IlleagalActivity" />
         <activity android:name=".activity.LoginActivity" />
         <activity android:name=".activity.CarAddlActivity" />
+        <activity android:name=".activity.IlleagalListActivity" />
+        <activity
+            android:name=".activity.JianceActivity"
+            android:windowSoftInputMode="stateHidden|stateUnchanged" />
+        <activity android:name=".activity.JianceCenterActivity" />
+        <activity android:name=".activity.CarBasicActivity" />
+        <activity android:name=".activity.OfflineReportActivity" />
     </application>
 
 </manifest>

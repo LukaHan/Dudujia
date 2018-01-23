@@ -18,7 +18,7 @@ import com.first.basket.http.HttpResultSubscriber
 import com.first.basket.http.TransformUtils
 import com.first.basket.utils.LogUtils
 import kotlinx.android.synthetic.main.fragment_home.*
-import kotlinx.android.synthetic.main.layout_item_home.view.*
+import kotlinx.android.synthetic.main.item_recycler_home.view.*
 
 /**
  * Created by hanshaobo on 01/12/2017.
@@ -42,7 +42,7 @@ class HomeFragment : BaseFragment() {
     }
 
     private fun initData() {
-        mAdapter = BaseRecyclerAdapter(R.layout.layout_item_home, mDatas) { view, newsBean ->
+        mAdapter = BaseRecyclerAdapter(R.layout.item_recycler_home, mDatas) { view, newsBean ->
             view.tvTitle.text = newsBean.title
             view.tvHeat.text = newsBean.heat
             ImageUtils.showImg(activity, newsBean.image, view.ivImg)
@@ -65,7 +65,6 @@ class HomeFragment : BaseFragment() {
                 .subscribe(object : HttpResultSubscriber<HttpResult<HomeBean>>() {
                     override fun onNext(t: HttpResult<HomeBean>) {
                         super.onNext(t)
-                        LogUtils.d(t.result.data.mainTitle + ",,," + t.result.data.news.size)
                         mDatas.clear()
                         mDatas.addAll(t.result.data.news)
                         mAdapter.notifyDataSetChanged()
@@ -75,11 +74,6 @@ class HomeFragment : BaseFragment() {
                         super.onCompleted()
                         (activity as MainActivity).hideLoading()
                         refreshLayout.isRefreshing = false
-                    }
-
-                    override fun onError(e: Throwable) {
-                        super.onError(e)
-                        LogUtils.d(e.message!!)
                     }
                 })
     }
