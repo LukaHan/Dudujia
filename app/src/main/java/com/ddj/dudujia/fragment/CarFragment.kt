@@ -8,10 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.ddj.dudujia.R
-import com.ddj.dudujia.activity.CarAddlActivity
-import com.ddj.dudujia.activity.IlleagalListActivity
-import com.ddj.dudujia.activity.LoginActivity
-import com.ddj.dudujia.activity.MainActivity
+import com.ddj.dudujia.activity.*
 import com.ddj.dudujia.adapter.CarListAdapter
 import com.ddj.dudujia.base.BaseFragment
 import com.ddj.dudujia.base.CarListBean
@@ -74,7 +71,7 @@ class CarFragment : BaseFragment() {
             }
 
             override fun onItemClick(view: View?, data: CarListBean.CarBean?, position: Int) {
-                var intent = Intent(activity, IlleagalListActivity::class.java)
+                var intent = Intent(activity, CarDetailListActivity::class.java)
                 intent.putExtra("licenseplate", data?.licenseplate)
                 intent.putExtra("vin", data?.vinnum)
                 startActivity(intent)

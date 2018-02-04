@@ -12,9 +12,8 @@ import com.ddj.dudujia.http.HttpResult
 import com.first.basket.http.HttpMethods
 import com.first.basket.http.HttpResultSubscriber
 import com.first.basket.http.TransformUtils
-import com.first.basket.utils.LogUtils
 import com.first.basket.utils.ToastUtil
-import kotlinx.android.synthetic.main.activity__list_illeagal.*
+import kotlinx.android.synthetic.main.activity__list_report.*
 import kotlinx.android.synthetic.main.item_recycler_report.view.*
 import org.jetbrains.anko.sdk25.coroutines.onClick
 

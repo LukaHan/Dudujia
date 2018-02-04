@@ -28,23 +28,23 @@ public class CarDetailBean {
          * jiance : null
          */
 
-        private Object cheshi;
-        private Object jiance;
+        private List<CheshiBean> cheshi;
+        private List<JianceBean> jiance;
         private List<WeizhangBean> weizhang;
 
-        public Object getCheshi() {
+        public List<CheshiBean> getCheshi() {
             return cheshi;
         }
 
-        public void setCheshi(Object cheshi) {
+        public void setCheshi(List<CheshiBean> cheshi) {
             this.cheshi = cheshi;
         }
 
-        public Object getJiance() {
+        public List<JianceBean> getJiance() {
             return jiance;
         }
 
-        public void setJiance(Object jiance) {
+        public void setJiance(List<JianceBean> jiance) {
             this.jiance = jiance;
         }
 
@@ -250,6 +250,188 @@ public class CarDetailBean {
             public void setPaymentstatus(String paymentstatus) {
                 this.paymentstatus = paymentstatus;
             }
+        }
+        public static class CheshiBean {
+            /**
+             "carhistoryid": "3",
+             "userid": "100001",
+             "vin": "WAURGB4H2CN031396",
+             "xsmc": "3.0TFSI 手自一体 45TFSI Quattro 舒适型",
+             "orderid": "170151608821450819",
+             "paystate": "2",
+             "reportid": "58125",
+             "updatedt": "2018-01-16 15:36:54"
+             */
+
+            private String carhistoryid;
+            private String userid;
+            private String vin;
+            private String xsmc;
+            private String orderid;
+            private String paystate;
+            private String reportid;
+            private String updatedt;
+
+            public String getCarhistoryid() {
+                return carhistoryid;
+            }
+
+            public void setCarhistoryid(String carhistoryid) {
+                this.carhistoryid = carhistoryid;
+            }
+
+            public String getUserid() {
+                return userid;
+            }
+
+            public void setUserid(String userid) {
+                this.userid = userid;
+            }
+
+            public String getVin() {
+                return vin;
+            }
+
+            public void setVin(String vin) {
+                this.vin = vin;
+            }
+
+            public String getXsmc() {
+                return xsmc;
+            }
+
+            public void setXsmc(String xsmc) {
+                this.xsmc = xsmc;
+            }
+
+            public String getOrderid() {
+                return orderid;
+            }
+
+            public void setOrderid(String orderid) {
+                this.orderid = orderid;
+            }
+
+            public String getPaystate() {
+                return paystate;
+            }
+
+            public void setPaystate(String paystate) {
+                this.paystate = paystate;
+            }
+
+            public String getReportid() {
+                return reportid;
+            }
+
+            public void setReportid(String reportid) {
+                this.reportid = reportid;
+            }
+
+            public String getUpdatedt() {
+                return updatedt;
+            }
+
+            public void setUpdatedt(String updatedt) {
+                this.updatedt = updatedt;
+            }
+
+        }
+        public static class JianceBean {
+            /**
+             "offlineapplicationid": "100009",
+             "orderid": "170151487705644510",
+             "address": "上海市 黄埔区 九江路501号",
+             "phone": "18301931581",
+             "time": "2018-01-02 15:07",
+             "vin": "LB37954SXCJ007555",
+             "carmodel": "奥迪 S7",
+             "reportid": "100023",
+             "updatedt": "2018-01-02 15:10:56"
+             */
+
+            private String offlineapplicationid;
+            private String orderid;
+            private String address;
+            private String phone;
+            private String time;
+            private String vin;
+            private String carmodel;
+            private String reportid;
+            private String updatedt;
+
+            public String getOfflineapplicationid() {
+                return offlineapplicationid;
+            }
+
+            public void setOfflineapplicationid(String offlineapplicationid) {
+                this.offlineapplicationid = offlineapplicationid;
+            }
+
+            public String getOrderid() {
+                return orderid;
+            }
+
+            public void setOrderid(String orderid) {
+                this.orderid = orderid;
+            }
+
+            public String getAddress() {
+                return address;
+            }
+
+            public void setAddress(String address) {
+                this.address = address;
+            }
+
+            public String getPhone() {
+                return phone;
+            }
+
+            public void setPhone(String phone) {
+                this.phone = phone;
+            }
+
+            public String getTime() {
+                return time;
+            }
+
+            public void setTime(String time) {
+                this.time = time;
+            }
+
+            public String getVin() {
+                return vin;
+            }
+
+            public void setVin(String vin) {
+                this.vin = vin;
+            }
+
+            public String getCarmodel() {
+                return carmodel;
+            }
+
+            public void setCarmodel(String carmodel) {
+                this.carmodel = carmodel;
+            }
+
+            public String getReportid() {
+                return reportid;
+            }
+
+            public void setReportid(String reportid) {
+                this.reportid = reportid;
+            }
+
+            public String getUpdatedt() {
+                return updatedt;
+            }
+
+            public void setUpdatedt(String updatedt) {
+                this.updatedt = updatedt;
+            }
+
         }
     }
 }
