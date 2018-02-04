@@ -153,9 +153,13 @@ public class SPUtil {
         SPUtil.setBoolean(StaticValue.SP_LOGIN_STATUS, false);
         SPUtil.setString(StaticValue.SP_LOGIN_PHONE, "");
         SPUtil.setString(StaticValue.SP_LOGIN_USERNAME, "");
-        SPUtil.setString(StaticValue.SP_NICKNAME, "");
         SPUtil.setBoolean(StaticValue.REPORT_ISLOAD, false);
         SPUtil.setString(StaticValue.ACCESS_TOKEN, "");
+
+        SPUtil.setString(StaticValue.SP_LOGIN_USERTYPE, "");
+        SPUtil.setString(StaticValue.SP_LOGIN_USER_NUM_CAR, "");
+        SPUtil.setString(StaticValue.SP_LOGIN_USER_NUM_REPORT, "");
+        SPUtil.setString(StaticValue.SP_LOGIN_USER_ID, "");
 
         //清空微信
         SPUtil.setString(StaticValue.ACCESS_TOKEN_WECHAT, "");

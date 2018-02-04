@@ -4,7 +4,6 @@ import android.os.Bundle
 import com.ddj.dudujia.R
 import com.ddj.dudujia.base.BaseActivity
 import com.ddj.dudujia.base.BaseBean
-import com.ddj.dudujia.bean.LoginBean
 import com.ddj.dudujia.common.StaticValue
 import com.ddj.dudujia.http.HttpResult
 import com.ddj.dudujia.utils.SPUtil
@@ -37,7 +36,7 @@ class CarAddlActivity : BaseActivity() {
             var vin = etVin.text.toString()
 
             HttpMethods.createService()
-                    .doAddMyCar("do_addmycar", SPUtil.getString(StaticValue.USER_ID, ""), plate, type, engine, vin)
+                    .doAddMyCar("do_addmycar", SPUtil.getString(StaticValue.SP_LOGIN_USER_ID, ""), plate, type, engine, vin)
                     .compose(TransformUtils.defaultSchedulers())
                     .subscribe(object : HttpResultSubscriber<HttpResult<BaseBean>>() {
                         override fun onNext(t: HttpResult<BaseBean>) {

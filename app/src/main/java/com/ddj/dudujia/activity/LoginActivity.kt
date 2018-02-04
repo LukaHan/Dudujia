@@ -18,7 +18,6 @@ import com.ddj.dudujia.utils.SPUtil
 import com.first.basket.http.HttpMethods
 import com.first.basket.http.HttpResultSubscriber
 import com.first.basket.http.TransformUtils
-import com.first.basket.utils.LogUtils
 import com.first.basket.utils.ToastUtil
 import kotlinx.android.synthetic.main.activity_login.*
 import org.jetbrains.anko.sdk25.coroutines.onClick
@@ -54,7 +53,18 @@ class LoginActivity : BaseActivity(), View.OnClickListener {
         }
 
         btLogin.onClick {
-            doLogin(etPhone.text.toString(), etCode.text.toString())
+            var phone = etPhone.text.toString()
+            var code = etCode.text.toString()
+
+            if(!CommonMethod.isMobile(phone)){
+                ToastUtil.showToast("请输入正确的手机号手机号")
+                return@onClick
+            }
+            if(code==""){
+                ToastUtil.showToast("请输入验证码")
+                return@onClick
+            }
+            doLogin(phone,code)
         }
     }
 
@@ -97,7 +107,11 @@ class LoginActivity : BaseActivity(), View.OnClickListener {
 
                             SPUtil.setBoolean(StaticValue.SP_LOGIN_STATUS, true)
                             SPUtil.setString(StaticValue.SP_LOGIN_PHONE, t.result.data.phone)
-                            SPUtil.setString(StaticValue.USER_ID, t.result.data.userid)
+                            SPUtil.setString(StaticValue.SP_LOGIN_USER_ID, t.result.data.userid)
+                            SPUtil.setString(StaticValue.SP_LOGIN_USERNAME, t.result.data.username)
+                            SPUtil.setString(StaticValue.SP_LOGIN_USERTYPE, t.result.data.usertype)
+                            SPUtil.setString(StaticValue.SP_LOGIN_USER_NUM_CAR, t.result.data.mycarnum)
+                            SPUtil.setString(StaticValue.SP_LOGIN_USER_NUM_REPORT, t.result.data.myreportnum)
                             setResult(Activity.RESULT_OK)
                             CommonMethod.hideKeyboard(etCode)
                             Handler().postDelayed({ finish() }, 1000)

@@ -61,7 +61,7 @@ class JianceCenterActivity : BaseActivity() {
 //            //调支付接口
 //
 //            var map = HashMap<String, String>()
-//            map.put("userid", SPUtil.getString(StaticValue.USER_ID, ""))
+//            map.put("userid", SPUtil.getString(StaticValue.SP_LOGIN_USER_ID, ""))
 //            map.put("paytype", "APP")
 //            map.put("productname", getString(R.string.phone_error))
 //            //

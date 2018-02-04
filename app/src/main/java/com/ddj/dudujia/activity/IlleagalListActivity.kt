@@ -41,10 +41,13 @@ class IlleagalListActivity : BaseActivity() {
                 .subscribe(object : HttpResultSubscriber<HttpResult<CarDetailBean>>() {
                     override fun onNext(t: HttpResult<CarDetailBean>) {
                         super.onNext(t)
-                        LogUtils.d("ttt:" + t.result.data.weizhang.size)
-                        mDatas.clear()
-                        mDatas.addAll(t.result.data.weizhang)
-                        mAdapter.notifyDataSetChanged()
+                        if(t.status==0){
+                            mDatas.clear()
+                            mDatas.addAll(t.result.data.weizhang)
+                            mAdapter.notifyDataSetChanged()
+                        }else{
+                            ToastUtil.showToast(t.info)
+                        }
                     }
                 })
 
@@ -60,7 +63,6 @@ class IlleagalListActivity : BaseActivity() {
             view.setOnClickListener(object :View.OnClickListener{
                 override fun onClick(v: View?) {
                     ToastUtil.showToast("进入下一页面")
-
                 }
             })
         }

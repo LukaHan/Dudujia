@@ -1,92 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="106dp"
-    android:layout_marginTop="5dp"
-    android:background="@color/white">
+    android:layout_height="111dp"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_gap" />
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp">
+        android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/tvAddress"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:text="123"
-            android:textColor="@color/gray33"
-            android:textSize="17sp" />
-
-        <TextView
-            android:id="@+id/tvReason"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tvAddress"
-            android:layout_marginTop="10dp"
-            android:text="123"
-            android:textColor="@color/gray99"
-            android:textSize="12sp" />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="18dp"
-            android:layout_alignParentBottom="true"
-            android:background="@color/mine_bg_blue"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dp">
-
-            <!--<ImageView-->
-
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:src="@mipmap/ic_illeagal_money" />-->
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
 
             <TextView
+                android:id="@+id/tvAddress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:drawableLeft="@mipmap/ic_illeagal_money"
-                android:drawablePadding="4dp"
-                android:text="200"
-                android:textColor="@color/white" />
+                android:layout_marginTop="15dp"
+                android:text="123"
+                android:textColor="@color/gray33"
+                android:textSize="17sp" />
 
             <TextView
+                android:id="@+id/tvReason"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:drawableLeft="@mipmap/ic_illeagal_coin"
-                android:drawablePadding="4dp"
-                android:text="0"
-                android:textColor="@color/white" />
+                android:layout_below="@id/tvAddress"
+                android:layout_marginTop="10dp"
+                android:text="123"
+                android:textColor="@color/gray99"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="18dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/mine_bg_blue"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp">
+
+                <!--<ImageView-->
+
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:src="@mipmap/ic_illeagal_money" />-->
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:drawableLeft="@mipmap/ic_illeagal_money"
+                    android:drawablePadding="4dp"
+                    android:text="200"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:drawableLeft="@mipmap/ic_illeagal_coin"
+                    android:drawablePadding="4dp"
+                    android:text="0"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="宁波交管局"
+                    android:textColor="@color/white" />
+            </LinearLayout>
 
             <TextView
+                android:id="@+id/tvDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="宁波交管局"
-                android:textColor="@color/white" />
-        </LinearLayout>
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:text="123"
+                android:textColor="@color/gray66"
+                android:textSize="10sp" />
+        </RelativeLayout>
 
-        <TextView
-            android:id="@+id/tvDate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
+
+        <ImageView
+            android:id="@+id/ivImg"
+            android:layout_width="110dp"
+            android:layout_height="74dp"
             android:layout_alignParentRight="true"
-            android:text="123"
-            android:textColor="@color/gray66"
-            android:textSize="10sp" />
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp" />
+
     </RelativeLayout>
-
-
-    <ImageView
-        android:id="@+id/ivImg"
-        android:layout_width="110dp"
-        android:layout_height="74dp"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:layout_marginRight="5dp" />
-</RelativeLayout>
+</LinearLayout>

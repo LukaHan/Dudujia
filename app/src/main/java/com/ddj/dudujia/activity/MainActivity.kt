@@ -27,6 +27,9 @@ import java.util.*
 
 
 class MainActivity : BaseActivity() {
+    public val INPUT_LICENSE_COMPLETE = "me.kevingo.licensekeyboard.input.comp"
+    public val INPUT_LICENSE_KEY = "LICENSE"
+
     companion object {
         private lateinit var instance: MainActivity
         fun getInstance1(): MainActivity {
@@ -56,7 +59,11 @@ class MainActivity : BaseActivity() {
 
         OpenInstall.getWakeUp(intent, wakeUpAdapter)
 
-        LogUtils.d("解密："+CBase64Util.decode("7bT1_vf4-PP61fny87SstLS6tOXhtKyip6S6tOX-tKyhpaS6tOXmtKy0pbijtLq08eC0rLTB8_TR2ranuKa2vtnm8_jR2rbTxbakuKa21f7k-fv_4_u_tLq08eS0rLTX8uTz-Pm2vsLbv7ajpaa0urT6_7SstKevpLinoK64pLiktLq09bSsp7q09-b9tKy0tLq05uG0rKa6tPnltKy09_jy5Pn_8rS6tPnl4PPktKy0oLimuKe0urT35ub98--0rLT48aWvpPO0urTgtKy0p7imuKa06w=="))
+        val waph = "7bT1_vf4-PP61fny87SstLS6tOXhtKyip6S6tOX-tKyhpaS6tOXmtKy0pbijtLq08eC0rLTB8_TR2ranuKa2vtnm8_jR2rbTxbakuKa21f7k-fv_4_u_tLq08eS0rLTX8uTz-Pm2vsLbv7ajpaa0urT6_7SstKevpLinoK64pLiktLq09bSsp7q09-b9tKy0tLq05uG0rKa6tPnltKy09_jy5Pn_8rS6tPnl4PPktKy0oLimuKe0urT35ub98--0rLShoNTd1KTU08TQ0NCgobS6tOC0rLSnuKa4p7Tr"
+        val apph = "7bTl5rSstKW4o7S6tPHgtKy0wfP00dq2p7imtr7Z5vP40dq208W2pLimttX-5Pn7_-P7v7S6tPHktKy01_Lk8_j5tr7C27-2o6WmtLq0-eW0rLTX-PLk-f_ytLq0-eXg8-S0rLSguKa4p7S6tOC0rLSnuKa4p7S6tPr_tKy0p6-kuKegrrikuKS0urTl4bSstKKnp7S6tOX-tKy0oaWntLq09-bm_fPvtKy0oaDU3dSk1NPE0NDQoKG06w=="
+
+        LogUtils.d("解密wap："+CBase64Util.decode(waph))
+        LogUtils.d("解密app："+CBase64Util.decode(apph))
     }
 
     override fun onNewIntent(intent: Intent?) {
@@ -154,7 +161,7 @@ class MainActivity : BaseActivity() {
         }
     }
 
-    fun setCurrentPage(index: Int) {
+    public fun setCurrentPage(index: Int) {
         if (fragmentList[index].isAdded) {
             switchFragment(index)
             bottomBar.selectTabAtPosition(index)

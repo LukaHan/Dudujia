@@ -727,6 +727,6 @@ public class CommonMethod {
     }
 
     public static String getUserId() {
-        return SPUtil.getString(StaticValue.USER_ID, "");
+        return SPUtil.getString(StaticValue.SP_LOGIN_USER_ID, "");
     }
 }

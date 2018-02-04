@@ -6,7 +6,6 @@ import android.os.Handler
 import android.os.Message
 import com.alipay.sdk.app.PayTask
 import com.ddj.dudujia.R
-import com.ddj.dudujia.R.id.btYuyue
 import com.ddj.dudujia.base.BaseActivity
 import com.ddj.dudujia.base.BaseBean
 import com.ddj.dudujia.bean.AliBean
@@ -39,8 +38,7 @@ class JianceActivity : BaseActivity() {
     }
 
     private fun initData() {
-
-        HttpMethods.createService().getReservation("getReservation", CommonMethod.getUserId())
+        HttpMethods.createService().getReservation("get_reservation", CommonMethod.getUserId())
                 .compose(TransformUtils.defaultSchedulers())
                 .subscribe(object : HttpResultSubscriber<HttpResult<ReservationBean>>() {
                     override fun onNext(t: HttpResult<ReservationBean>) {
@@ -73,7 +71,7 @@ class JianceActivity : BaseActivity() {
             //调支付接口
 
             var map = HashMap<String, String>()
-            map.put("userid", SPUtil.getString(StaticValue.USER_ID, ""))
+            map.put("userid", SPUtil.getString(StaticValue.SP_LOGIN_USER_ID, ""))
             map.put("paytype", "APP")
             map.put("productname", getString(R.string.phone_error))
             //

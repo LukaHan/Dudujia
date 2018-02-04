@@ -19,20 +19,51 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/rlDesc"
         android:layout_width="match_parent"
         android:layout_height="116dp"
-        android:layout_below="@id/rlTitle"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
-        android:visibility="gone">
+        android:layout_marginTop="64dp"
+        android:background="@color/white">
 
+        <TextView
+            android:id="@+id/tv0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="20dp"
+            android:text="值得信赖的二手车检测专家"
+            android:textColor="@color/gray33"
+            android:textSize="17sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv0"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="20dp"
+            android:text="TRUSTWORTHY USED CAR\nDETECTION EXPERTS"
+            android:textColor="@color/gray66"
+            android:textSize="10sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="20dp"
+            android:text="点击开始笃笃驾"
+            android:textColor="@color/gray66"
+            android:textSize="14sp" />
     </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/rlTitle"
-        android:layout_marginTop="44dp"
+        android:layout_below="@id/rlDesc"
+        android:layout_marginTop="10dp"
         android:orientation="vertical">
 
         <android.support.v4.widget.SwipeRefreshLayout

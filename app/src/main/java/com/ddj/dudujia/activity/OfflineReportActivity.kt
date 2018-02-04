@@ -13,6 +13,7 @@ import com.first.basket.http.HttpMethods
 import com.first.basket.http.HttpResultSubscriber
 import com.first.basket.http.TransformUtils
 import com.first.basket.utils.LogUtils
+import com.first.basket.utils.ToastUtil
 import kotlinx.android.synthetic.main.activity__list_illeagal.*
 import kotlinx.android.synthetic.main.item_recycler_report.view.*
 import org.jetbrains.anko.sdk25.coroutines.onClick
@@ -38,9 +39,13 @@ class OfflineReportActivity : BaseActivity() {
                 .subscribe(object : HttpResultSubscriber<HttpResult<OfflineReportBean>>() {
                     override fun onNext(t: HttpResult<OfflineReportBean>) {
                         super.onNext(t)
-                        mDatas.clear()
-                        mDatas.addAll(t.result.data)
-                        mAdapter.notifyDataSetChanged()
+                        if (t.status == 0) {
+                            mDatas.clear()
+                            mDatas.addAll(t.result.data)
+                            mAdapter.notifyDataSetChanged()
+                        } else {
+                            ToastUtil.showToast(t.info)
+                        }
                     }
                 })
 

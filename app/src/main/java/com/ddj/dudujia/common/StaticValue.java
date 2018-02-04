@@ -15,7 +15,10 @@ public class StaticValue {
     public static final String SP_LOGIN_STATUS = "sp_login_status";
     public static final String SP_LOGIN_PHONE = "sp_login_phone";
     public static final String SP_LOGIN_USERNAME = "sp_login_username";
-    public static final String SP_NICKNAME = "sp_nickname";
+
+    public static final String SP_LOGIN_USERTYPE = "sp_login_usertype";
+    public static final String SP_LOGIN_USER_NUM_REPORT = "sp_login_user_num_report";
+    public static final String SP_LOGIN_USER_NUM_CAR = "sp_login_user_num_car";
 
     public static final String SP_PAY = "sp_pay";
     public static final String VIN = "vin";
@@ -48,7 +51,7 @@ public class StaticValue {
 
 
     //basket
-    public static final String USER_ID = "user_id";
+    public static final String SP_LOGIN_USER_ID = "sp_login_user_id";
 
     public static final String SEARCH = "search";
     public static final String SEARCH_COUNT = "search_count";

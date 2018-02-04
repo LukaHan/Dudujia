@@ -44,7 +44,7 @@ class HomeFragment : BaseFragment() {
     private fun initData() {
         mAdapter = BaseRecyclerAdapter(R.layout.item_recycler_home, mDatas) { view, newsBean ->
             view.tvTitle.text = newsBean.title
-            view.tvHeat.text = newsBean.heat
+            view.tvHeat.text = newsBean.heat + "查看"
             ImageUtils.showImg(activity, newsBean.image, view.ivImg)
         }
         recyclerView.adapter = mAdapter
@@ -55,7 +55,6 @@ class HomeFragment : BaseFragment() {
             override fun onRefresh() {
                 getData()
             }
-
         })
     }
 
