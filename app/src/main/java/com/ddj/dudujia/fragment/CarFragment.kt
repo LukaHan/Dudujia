@@ -118,4 +118,14 @@ class CarFragment : BaseFragment() {
             getData()
         }
     }
+
+    fun setLoginStatus() {
+        if(CommonMethod.isLogin()){
+            getData()
+        }else{
+            llNoCar.visibility = View.VISIBLE
+            refreshLayout.visibility = View.GONE
+        }
+
+    }
 }

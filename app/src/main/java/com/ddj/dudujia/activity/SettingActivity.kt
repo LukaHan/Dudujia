@@ -39,7 +39,7 @@ class SettingActivity : BaseActivity() {
                 RxjavaUtil.doInUIThreadDelay(object : UITask<Any>() {
                     override fun doInUIThread() {
                         ToastUtil.showToast(this@SettingActivity, "退出登录")
-                        finish()
+                        myFinish()
                     }
 
                 }, 500, TimeUnit.MILLISECONDS)

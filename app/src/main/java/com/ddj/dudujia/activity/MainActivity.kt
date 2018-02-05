@@ -42,8 +42,8 @@ class MainActivity : BaseActivity() {
     private var fragmentList = ArrayList<BaseFragment>()
 
     private var homeFragment = HomeFragment()
-    private var classifyFragment = ServiceFragment()
-    private var activeFragment = CarFragment()
+    private var serviceFragment = ServiceFragment()
+    private var carFragment = CarFragment()
     private var mineFragment = MineFragment()
 
     private lateinit var nearby: BottomBarTab
@@ -89,8 +89,8 @@ class MainActivity : BaseActivity() {
         fragmentList = ArrayList()
         homeFragment = HomeFragment()
         fragmentList.add(homeFragment)
-        fragmentList.add(classifyFragment)
-        fragmentList.add(activeFragment)
+        fragmentList.add(serviceFragment)
+        fragmentList.add(carFragment)
         fragmentList.add(mineFragment)
     }
 
@@ -146,8 +146,8 @@ class MainActivity : BaseActivity() {
         var fragment: BaseFragment? = null
         when (index) {
             0 -> fragment = homeFragment
-            1 -> fragment = classifyFragment
-            2 -> fragment = activeFragment
+            1 -> fragment = serviceFragment
+            2 -> fragment = carFragment
             3 -> fragment = mineFragment
         }
         if (baseFragment == null) {
@@ -194,5 +194,9 @@ class MainActivity : BaseActivity() {
     override fun onDestroy() {
         super.onDestroy()
 //        wakeUpAdapter = null
+    }
+
+    fun setLoginStatus() {
+        carFragment.setLoginStatus()
     }
 }

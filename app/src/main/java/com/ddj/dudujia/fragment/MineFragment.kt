@@ -72,6 +72,8 @@ class MineFragment : BaseFragment() {
     }
 
     private fun setLoginStatus() {
+        (activity as MainActivity).setLoginStatus()
+
         if (SPUtil.getBoolean(StaticValue.SP_LOGIN_STATUS, false)) {
             val username = SPUtil.getString(StaticValue.SP_LOGIN_USERNAME, "")
             tvNickname.text = username
