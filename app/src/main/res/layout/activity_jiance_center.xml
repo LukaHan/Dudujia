@@ -82,7 +82,7 @@
             android:layout_marginBottom="30dp"
             android:layout_marginLeft="155dp"
             android:layout_marginTop="30dp"
-            android:text="（0/20）"
+            android:text="（0/17）"
             android:textColor="@color/gray66"
             android:textSize="14sp" />
     </RelativeLayout>
@@ -120,7 +120,7 @@
             android:layout_marginBottom="30dp"
             android:layout_marginLeft="155dp"
             android:layout_marginTop="30dp"
-            android:text="（0/20）"
+            android:text="（0/16）"
             android:textColor="@color/gray66"
             android:textSize="14sp" />
     </RelativeLayout>
@@ -158,7 +158,7 @@
             android:layout_marginBottom="30dp"
             android:layout_marginLeft="155dp"
             android:layout_marginTop="30dp"
-            android:text="（0/20）"
+            android:text="（0/15）"
             android:textColor="@color/gray66"
             android:textSize="14sp" />
     </RelativeLayout>

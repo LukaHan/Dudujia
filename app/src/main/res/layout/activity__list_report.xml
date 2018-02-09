@@ -7,17 +7,15 @@
 
     <com.ddj.dudujia.view.TitleView
         android:id="@+id/titleView"
-        app:titleText="检测中心"
+        app:titleText="车辆检测报告"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp">
+        android:layout_height="wrap_content">
     </com.ddj.dudujia.view.TitleView>
 
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/refreshLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="5dp">
+        android:layout_height="match_parent">
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recyclerView"

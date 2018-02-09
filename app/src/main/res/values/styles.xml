@@ -116,8 +116,4 @@
         <item name="android:gravity">bottom</item>
     </style>
 
-    <style name="CustomCheckboxTheme" parent="Widget.AppCompat.CompoundButton.CheckBox">
-        <item name="android:button">@drawable/checkbox_selector</item>
-    </style>
-
 </resources>

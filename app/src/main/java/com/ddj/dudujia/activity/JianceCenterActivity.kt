@@ -1,25 +1,9 @@
 package com.ddj.dudujia.activity
 
-import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
-import android.os.Message
-import android.view.View
-import com.alipay.sdk.app.PayTask
 import com.ddj.dudujia.R
 import com.ddj.dudujia.base.BaseActivity
-import com.ddj.dudujia.base.BaseBean
-import com.ddj.dudujia.bean.AliBean
-import com.ddj.dudujia.common.CommonMethod
-import com.ddj.dudujia.common.StaticValue
-import com.ddj.dudujia.http.HttpResult
-import com.ddj.dudujia.utils.SPUtil
-import com.ddj.dudujia.utils.alipay.PayResult
-import com.first.basket.http.HttpMethods
-import com.first.basket.http.HttpResultSubscriber
-import com.first.basket.http.TransformUtils
-import com.first.basket.utils.ToastUtil
-import kotlinx.android.synthetic.main.activity_jiance.*
 import kotlinx.android.synthetic.main.activity_jiance_center.*
 import org.jetbrains.anko.sdk25.coroutines.onClick
 
@@ -27,6 +11,7 @@ import org.jetbrains.anko.sdk25.coroutines.onClick
  * Created by hanshaobo on 20/01/2018.
  */
 class JianceCenterActivity : BaseActivity() {
+    private lateinit var reportid: String
     private val SDK_PAY_FLAG: Int = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,9 +21,27 @@ class JianceCenterActivity : BaseActivity() {
     }
 
     private fun initView() {
+        reportid = intent.getStringExtra("reportid")
+
         rlBase.onClick {
-
-
+            var intent = Intent(this@JianceCenterActivity, CarBasicActivity::class.java)
+            intent.putExtra("reportid", reportid)
+            myStartActivity(intent)
+        }
+        rlOut.onClick {
+            var intent = Intent(this@JianceCenterActivity, CarOutActivity::class.java)
+            intent.putExtra("reportid", reportid)
+            myStartActivity(intent)
+        }
+        rlIn.onClick {
+            var intent = Intent(this@JianceCenterActivity, CarInnerActivity::class.java)
+            intent.putExtra("reportid", reportid)
+            myStartActivity(intent)
+        }
+        rlGujia.onClick {
+            var intent = Intent(this@JianceCenterActivity, CarGujiaActivity::class.java)
+            intent.putExtra("reportid", reportid)
+            myStartActivity(intent)
         }
 
 //        btYuyue.onClick {

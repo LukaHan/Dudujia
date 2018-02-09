@@ -81,4 +81,9 @@ interface ApiService {
     @FormUrlEncoded
     @POST("ClientAPI.php")
     fun modifyUsername(@Field("action") action: String, @Field("userid") userid: String, @Field("username") username: String): Observable<HttpResult<LoginBean>>
+
+    //检查VIN是否可查
+    @FormUrlEncoded
+    @POST("ClientAPI.php")
+    fun checkVin(@Field("action") action: String, @Field("vinnum") vinnum: String): Observable<HttpResult<CheckVinBean>>
 }

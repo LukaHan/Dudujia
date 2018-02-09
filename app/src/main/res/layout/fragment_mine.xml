@@ -102,27 +102,37 @@
                 android:gravity="center_horizontal">
 
                 <ImageView
+                    android:layout_marginTop="10dp"
                     android:id="@+id/ivReport"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
                     android:layout_marginRight="10dp"
                     android:src="@mipmap/ic_mine_report" />
 
                 <TextView
                     android:id="@+id/tvReportNum"
+                    android:layout_marginTop="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
                     android:layout_marginLeft="10dp"
                     android:layout_toRightOf="@id/ivReport"
                     android:textColor="@color/gray33"
                     android:textSize="14sp" />
+
+                <TextView
+                    android:textColor="@color/gray33"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="6dp"
+                    android:layout_alignParentBottom="true"
+                    android:text="车史报告"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
             </RelativeLayout>
         </RelativeLayout>
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/rlJiance"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_marginBottom="10dp"
@@ -145,7 +155,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_toRightOf="@id/ivMineReportOffline"
-            android:text="线下检测报告"
+            android:text="车辆检测报告"
             android:textColor="@color/white"
             android:textSize="14sp" />
 
@@ -155,7 +165,7 @@
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="10dp"
             android:layout_toRightOf="@id/ivMineReportOffline"
-            android:text="这里是文案，写些什么呢？我也不知道"
+            android:text="AIS认证检测师 1+267项检测"
             android:textColor="@color/white"
             android:textSize="12sp" />
     </RelativeLayout>
@@ -168,7 +178,8 @@
         android:background="@color/white"
         android:clickable="true"
         android:focusable="true"
-        app:accountManagerTitle="我的订单" />
+        app:accountManagerTitle="我的订单"
+        android:visibility="gone"/>
 
     <com.ddj.dudujia.view.AccountItemManagerView
         android:id="@+id/aimvAccount"

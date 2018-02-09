@@ -30,7 +30,6 @@ class CarBasicActivity : BaseActivity() {
                 .subscribe(object : HttpResultSubscriber<HttpResult<ReportBasicBean>>() {
                     override fun onNext(t: HttpResult<ReportBasicBean>) {
                         super.onNext(t)
-                        LogUtils.d("ttt:" + t.result.data.toString())
                         setData(t.result.data)
                     }
                 })

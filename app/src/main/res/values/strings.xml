@@ -4,5 +4,17 @@
     <string name="car">添加爱车至我的车库，即可享受售后维保、违章查询、保险到\n期等众多信息的免费更新。</string>
     <string name="phone_error">请输入正确的手机号</string>
     <string name="vin_error">请输入正确的VIN</string>
+    <string name="vin_query_error">VIN码查询失败</string>
+    <string name="plate_error">请输入正确的车牌号</string>
     <string name="product_name">笃笃驾-线下检测</string>
+    <string name="check">用于核实车主本人</string>
+    <string name="vin_input">输入车架号（ VIN ）…</string>
+    <string name="about1">\t\t\t\t笃笃驾携手AIS与日本上市公司AUCNET集团在国内的检测公司AIS进行全方位的车辆检测合作。</string>
+    <string name="about2">\t\t\t\t笃笃驾研发携手AIS共同修订适用检测法，针对不同场景、不同客户，以适用为导向，开创车辆检测行业高效、实用新局面。</string>
+    <string name="about3">\t\t\t\t车之往象，善行者明从保养记录出发，到AIS认证工程师现场检测，让车辆真实状况一览无余，杜绝事故车、泡水车、火烧车、调表车，助您购车无忧。</string>
+    <string name="about4">\t\t\t\t每一位AIS认证工程师都通过严苛的培训，百里挑一。前端检测，后端审核，我们严谨对待，只为真实告知。如果我们不能还原真相，我们愿意赔偿损失。</string>
+    <string name="about5">Copyright ©2016-2018</string>
+    <string name="about6">上海笃笃驾汽车科技有限公司</string>
+    <string name="service_phone">021-31137269</string>
+
 </resources>

@@ -59,12 +59,19 @@
             android:windowSoftInputMode="stateHidden|stateUnchanged" />
         <activity android:name=".activity.JianceCenterActivity" />
         <activity android:name=".activity.CarBasicActivity" />
+        <activity android:name=".activity.CarOutActivity" />
+        <activity android:name=".activity.CarInnerActivity" />
+        <activity android:name=".activity.CarGujiaActivity" />
         <activity android:name=".activity.OfflineReportActivity" />
-        <activity android:name=".activity.ProvinceActivity" />
+        <activity android:name=".activity.ProvinceActivity"
+            android:windowSoftInputMode="adjustPan" />
         <activity android:name=".activity.SettingActivity" />
         <activity android:name=".activity.ModifyNicknameActivity" />
         <activity android:name=".activity.CarDetailListActivity" />
         <activity android:name=".activity.WebViewActivity" />
+        <activity android:name=".activity.CarHistoryActivity" />
+        <activity android:name=".activity.AboutActivity" />
+        <activity android:name=".activity.CarHistoryReportActivity" />
     </application>
 
 </manifest>

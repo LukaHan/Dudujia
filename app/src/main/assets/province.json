@@ -1,0 +1,210 @@
+{
+  "province": [
+    {
+      "name": "京",
+      "letter": "热门城市",
+      "simple": "BJ",
+      "province": "北京市"
+    },
+    {
+      "name": "沪",
+      "letter": "热门城市",
+      "simple": "SH",
+      "province": "上海市"
+    },
+    {
+      "name": "粤",
+      "letter": "热门城市",
+      "simple": "GD",
+      "province": "广东省"
+    },
+
+
+    {
+      "name": "京",
+      "letter": "J",
+      "simple": "BJ",
+      "province": "北京市"
+    },
+    {
+      "name": "沪",
+      "letter": "H",
+      "simple": "SH",
+      "province": "上海市"
+    },
+    {
+      "name": "津",
+      "letter": "J",
+      "simple": "TJ",
+      "province": "天津市"
+    },
+    {
+      "name": "渝",
+      "letter": "Y",
+      "simple": "CQ",
+      "province": "重庆市"
+    },
+    {
+      "name": "皖",
+      "letter": "W",
+      "simple": "AH",
+      "province": "安徽省"
+    },
+    {
+      "name": "闽",
+      "letter": "M",
+      "simple": "FJ",
+      "province": "福建省"
+    },
+    {
+      "name": "甘",
+      "letter": "G",
+      "simple": "GS",
+      "province": "甘肃省"
+    },
+    {
+      "name": "粤",
+      "letter": "Y",
+      "simple": "GD",
+      "province": "广东省"
+    },
+    {
+      "name": "桂",
+      "letter": "G",
+      "simple": "GX",
+      "province": "广西壮族自治区"
+    },
+    {
+      "name": "黔",
+      "letter": "Q",
+      "simple": "GZ",
+      "province": "贵州省"
+    },
+    {
+      "name": "琼",
+      "letter": "Q",
+      "simple": "HN",
+      "province": "海南省"
+    },
+    {
+      "name": "冀",
+      "letter": "J",
+      "simple": "HB",
+      "province": "河北省"
+    },
+    {
+      "name": "豫",
+      "letter": "Y",
+      "simple": "HN",
+      "province": "河南省"
+    },
+    {
+      "name": "黑",
+      "letter": "H",
+      "simple": "HLJ",
+      "province": "黑龙江省"
+    },
+    {
+      "name": "鄂",
+      "letter": "E",
+      "simple": "HB",
+      "province": "湖北省"
+    },
+    {
+      "name": "湘",
+      "letter": "X",
+      "simple": "HN",
+      "province": "湖南省"
+    },
+    {
+      "name": "吉",
+      "letter": "J",
+      "simple": "JL",
+      "province": "吉林省"
+    },
+    {
+      "name": "苏",
+      "letter": "S",
+      "simple": "JS",
+      "province": "江苏省"
+    },
+    {
+      "name": "赣",
+      "letter": "G",
+      "simple": "JX",
+      "province": "江西省"
+    },
+    {
+      "name": "辽",
+      "letter": "L",
+      "simple": "LN",
+      "province": "辽宁省"
+    },
+    {
+      "name": "蒙",
+      "letter": "M",
+      "simple": "NMG",
+      "province": "内蒙古"
+    },
+    {
+      "name": "宁",
+      "letter": "N",
+      "simple": "NX",
+      "province": "宁夏回族自治区"
+    },
+    {
+      "name": "青",
+      "letter": "Q",
+      "simple": "QH",
+      "province": "青海省"
+    },
+    {
+      "name": "鲁",
+      "letter": "L",
+      "simple": "SD",
+      "province": "山东省"
+    },
+    {
+      "name": "晋",
+      "letter": "J",
+      "simple": "SX",
+      "province": "山西省"
+    },
+    {
+      "name": "陕",
+      "letter": "S",
+      "simple": "SX",
+      "province": "陕西省"
+    },
+    {
+      "name": "川",
+      "letter": "C",
+      "simple": "SC",
+      "province": "四川省"
+    },
+    {
+      "name": "藏",
+      "letter": "Z",
+      "simple": "XZ",
+      "province": "西藏自治区"
+    },
+    {
+      "name": "新",
+      "letter": "X",
+      "simple": "XJ",
+      "province": "新疆维吾尔自治区"
+    },
+    {
+      "name": "云",
+      "letter": "D",
+      "simple": "YN",
+      "province": "云南省"
+    },
+    {
+      "name": "浙",
+      "letter": "Z",
+      "simple": "ZJ",
+      "province": "浙江省"
+    }
+  ]
+}

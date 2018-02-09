@@ -4,18 +4,14 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.ddj.dudujia.view.TitleView
-        android:id="@+id/titleView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
     <EditText
         android:id="@+id/etSearch"
         android:layout_width="match_parent"
-        android:layout_height="28dp"
+        android:layout_height="38dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-
+        android:background="@drawable/edittext_input_bg"
+        android:drawableLeft="@mipmap/icon_search"
         android:drawablePadding="20dp"
         android:hint="搜索省份"
         android:imeOptions="actionSearch"
@@ -26,14 +22,9 @@
         android:textColorHint="#D5D4D9"
         android:textSize="14sp" />
 
-    <!--android:background="@drawable/edittext_input_bg"-->
-    <!--android:drawableLeft="@drawable/icon_search"-->
-
-
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="30dp">
+        android:layout_height="match_parent">
 
 
         <com.ddj.dudujia.view.PinnedHeaderListView
@@ -69,7 +60,7 @@
             android:layout_alignParentRight="true"
             android:layout_marginBottom="100dp"
             android:layout_marginTop="100dp"
-            android:visibility="invisible"/>
+            android:visibility="invisible" />
 
     </RelativeLayout>
 

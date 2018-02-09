@@ -7,6 +7,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -15,9 +16,10 @@ import com.ddj.dudujia.R;
 import com.ddj.dudujia.adapter.ProvinceAdapter;
 import com.ddj.dudujia.base.BaseActivity;
 import com.ddj.dudujia.bean.ProvinceEntity;
+import com.ddj.dudujia.rxjava.RxjavaUtil;
+import com.ddj.dudujia.rxjava.UITask;
 import com.ddj.dudujia.view.PinnedHeaderListView;
 import com.ddj.dudujia.view.SlideBar;
-import com.ddj.dudujia.view.TitleView;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -25,6 +27,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.concurrent.TimeUnit;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -42,8 +45,6 @@ public class ProvinceActivity extends BaseActivity {
     TextView tvLetter;
     @BindView(R.id.slideBar)
     SlideBar slideBar;
-    @BindView(R.id.titleView)
-    TitleView titleView;
     @BindView(R.id.etSearch)
     EditText etSearch;
     private ArrayList<ProvinceEntity.Province> list;
@@ -54,7 +55,7 @@ public class ProvinceActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_layout_province);
+        setContentView(R.layout.activity_province);
         ButterKnife.bind(this);
         initView();
         initData();
@@ -62,12 +63,6 @@ public class ProvinceActivity extends BaseActivity {
     }
 
     private void initView() {
-//        titleView.setBackVisible(true);
-//        titleView.setSplitLineInvisible(true);
-
-        titleView.setFocusable(true);
-        titleView.setFocusableInTouchMode(true);
-        titleView.requestFocus();
     }
 
     private void initData() {
@@ -118,33 +113,32 @@ public class ProvinceActivity extends BaseActivity {
             }
         });
 
-//        headListView.setOnScrollListener(new AbsListView.OnScrollListener() {
-//            @Override
-//            public void onScrollStateChanged(AbsListView view, int scrollState) {
-//                isFirst = false;
-//                if (scrollState == SCROLL_STATE_IDLE) {
-//                    RxjavaUtil.doInUIThreadDelay(new UITask<Object>() {
-//                        @Override
-//                        public void doInUIThread() {
-//                            slideBar.setVisibility(View.INVISIBLE);
-//                        }
-//                    }, 3, TimeUnit.SECONDS);
-//                }
-//
-//            }
-//
-//            @Override
-//            public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
-//
-//                LogUtil.d(TAG, "onScroll" + firstVisibleItem);
-//                if (isFirst) {
-//                    slideBar.setVisibility(View.INVISIBLE);
-//                }else{
-//                    slideBar.setVisibility(View.VISIBLE);
-//                }
-//
-//            }
-//        });
+        headListView.setOnScrollListener(new AbsListView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(AbsListView view, int scrollState) {
+                isFirst = false;
+                if (scrollState == SCROLL_STATE_IDLE) {
+                    RxjavaUtil.doInUIThreadDelay(new UITask<Object>() {
+                        @Override
+                        public void doInUIThread() {
+                            slideBar.setVisibility(View.INVISIBLE);
+                        }
+                    }, 3, TimeUnit.SECONDS);
+                }
+
+            }
+
+            @Override
+            public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+
+                if (isFirst) {
+                    slideBar.setVisibility(View.INVISIBLE);
+                }else{
+                    slideBar.setVisibility(View.VISIBLE);
+                }
+
+            }
+        });
     }
 
 

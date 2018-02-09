@@ -29,12 +29,16 @@ class ServiceFragment : BaseFragment() {
     private fun initListener() {
         rlWeizhang.onClick {
             startActivity(Intent(activity, IlleagalActivity::class.java))
-//            startActivity(Intent(activity, ProvinceActivity::class.java))
+        }
+        rlHistory.onClick {
+            startActivity(Intent(activity, CarHistoryActivity::class.java))
         }
         rlJiance.onClick {
             startActivity(Intent(activity, JianceActivity::class.java))
         }
-
+        btYuyue.onClick {
+            startActivity(Intent(activity, JianceActivity::class.java))
+        }
     }
 
     private fun initView() {

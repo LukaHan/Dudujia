@@ -511,14 +511,16 @@
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="100dp"
-                        android:text="AT" />
+                        android:text="AT"
+                        android:textSize="12sp" />
 
                     <RadioButton
                         android:id="@+id/rb_transmissionmode1"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="50dp"
-                        android:text="MT" />
+                        android:text="MT"
+                        android:textSize="12sp" />
                 </RadioGroup>
             </RelativeLayout>
 
@@ -528,7 +530,8 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
                 android:layout_marginTop="10dp"
-                android:background="@color/white">
+                android:background="@color/white"
+                android:textSize="12sp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -550,14 +553,16 @@
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="100dp"
-                        android:text="2WD" />
+                        android:text="2WD"
+                        android:textSize="12sp" />
 
                     <RadioButton
                         android:id="@+id/rb_drivingmode1"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="50dp"
-                        android:text="4WD" />
+                        android:text="4WD"
+                        android:textSize="12sp" />
                 </RadioGroup>
             </RelativeLayout>
 
@@ -589,14 +594,16 @@
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="100dp"
-                        android:text="营运" />
+                        android:text="营运"
+                        android:textSize="12sp" />
 
                     <RadioButton
                         android:id="@+id/rb_useproperty1"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="50dp"
-                        android:text="非营运" />
+                        android:text="非营运"
+                        android:textSize="12sp" />
                 </RadioGroup>
             </RelativeLayout>
 
@@ -628,14 +635,16 @@
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="100dp"
-                        android:text="手动" />
+                        android:text="手动"
+                        android:textSize="12sp" />
 
                     <RadioButton
                         android:id="@+id/rb_airsystem1"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="50dp"
-                        android:text="恒温" />
+                        android:text="恒温"
+                        android:textSize="12sp" />
                 </RadioGroup>
             </RelativeLayout>
 
@@ -663,21 +672,73 @@
                     android:orientation="horizontal">
 
                     <RadioButton
-                        android:id="@+id/rb_ranyou"
-                        android:layout_width="100dp"
+                        android:id="@+id/rb_ranyou0"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="100dp"
-                        android:text="手动" />
+                        android:layout_weight="1"
+                        android:text="汽油"
+                        android:textSize="12sp" />
 
                     <RadioButton
                         android:id="@+id/rb_ranyou1"
-                        android:layout_width="100dp"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="50dp"
-                        android:text="恒温" />
+                        android:layout_weight="1"
+                        android:text="柴油"
+                        android:textSize="12sp" />
+
+                    <RadioButton
+                        android:id="@+id/rb_ranyou2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="电动"
+                        android:textSize="12sp" />
+
                 </RadioGroup>
             </RelativeLayout>
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@color/white">
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="100dp"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rb_ranyou3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="混合动力"
+                        android:textSize="12sp" />
+
+                    <RadioButton
+                        android:id="@+id/rb_ranyou4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="其他"
+                        android:textSize="12sp" />
+
+                    <RadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:visibility="invisible" />
+
+                </RadioGroup>
+            </RelativeLayout>
+
+            <include layout="@layout/layout_basic_other" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

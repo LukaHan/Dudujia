@@ -22,80 +22,33 @@
             android:orientation="horizontal">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:text="车牌号码"
                 android:textColor="@color/gray33"
                 android:textSize="17dp" />
 
+            <Button
+                android:id="@+id/btSelProvince"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:background="@color/colorPrimary"
+                android:text="沪"
+                android:textSize="14dp" />
+
             <EditText
                 android:id="@+id/etLicensePlate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
                 android:background="@null"
-                android:hint="车牌号码"
+                android:inputType="textCapCharacters"
+                android:maxLength="6"
+                android:hint="@string/check"
                 android:textColor="@color/gray33"
-                android:textSize="14dp"
-                android:visibility="gone" />
+                android:textSize="14dp" />
 
-
-            <LinearLayout
-                android:id="@+id/ll_license_input_boxes_content"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:orientation="horizontal">
-
-                <EditText
-                    android:id="@+id/et_car_license_inputbox1"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:background="@drawable/car_license_inputbox"
-                    android:gravity="center_horizontal|center_vertical" />
-
-                <EditText
-                    android:id="@+id/et_car_license_inputbox2"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:background="@drawable/car_license_inputbox"
-                    android:gravity="center_horizontal|center_vertical" />
-
-                <EditText
-                    android:id="@+id/et_car_license_inputbox3"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:background="@drawable/car_license_inputbox"
-                    android:gravity="center_horizontal|center_vertical" />
-
-                <EditText
-                    android:id="@+id/et_car_license_inputbox4"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:background="@drawable/car_license_inputbox"
-                    android:gravity="center_horizontal|center_vertical" />
-
-                <EditText
-                    android:id="@+id/et_car_license_inputbox5"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:background="@drawable/car_license_inputbox"
-                    android:gravity="center_horizontal|center_vertical" />
-
-                <EditText
-                    android:id="@+id/et_car_license_inputbox6"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:background="@drawable/car_license_inputbox"
-                    android:gravity="center_horizontal|center_vertical" />
-
-                <EditText
-                    android:id="@+id/et_car_license_inputbox7"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:background="@drawable/car_license_inputbox"
-                    android:gravity="center_horizontal|center_vertical" />
-            </LinearLayout>
         </LinearLayout>
 
         <include
@@ -111,26 +64,31 @@
             android:orientation="horizontal">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:text="选择车型"
                 android:textColor="@color/gray33"
                 android:textSize="17dp" />
 
-            <android.support.v7.widget.AppCompatCheckBox
-                android:id="@+id/cbCarSamll"
-                android:layout_width="wrap_content"
+            <RadioGroup
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:text="小型车" />
+                android:layout_centerVertical="true"
+                android:orientation="horizontal">
 
-            <android.support.v7.widget.AppCompatCheckBox
-                android:id="@+id/cbCarLarge"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:text="大型车" />
+                <RadioButton
+                    android:id="@+id/rbCarSmall"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="小型车" />
+
+                <RadioButton
+                    android:id="@+id/rbCarLarge"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="大型车" />
+            </RadioGroup>
 
         </LinearLayout>
 
@@ -148,7 +106,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:text="发动机号"
@@ -159,9 +117,9 @@
                 android:id="@+id/etEngineNumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
                 android:background="@null"
-                android:hint="用于核实车主本人"
+                android:hint="@string/check"
+                android:inputType="textCapCharacters"
                 android:maxLength="9"
                 android:textColor="@color/gray33"
                 android:textSize="14dp" />
@@ -180,30 +138,31 @@
             android:orientation="horizontal">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:text="VIN"
                 android:textColor="@color/gray33"
-                android:textSize="17dp" />
+                android:textSize="17sp" />
 
             <EditText
                 android:id="@+id/etVin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
                 android:background="@null"
-                android:hint="用于核实车主本人"
+                android:hint="@string/check"
                 android:maxLength="17"
+                android:inputType="textCapCharacters"
                 android:textColor="@color/gray33"
-                android:textSize="14dp" />
+                android:textSize="14sp" />
         </LinearLayout>
 
         <android.support.v7.widget.AppCompatCheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:text="我已同意《违章代缴协议》\n授权笃笃驾使用我的个人信息用于查询违章查询" />
+            android:text="我已同意《违章代缴协议》\n授权笃笃驾使用我的个人信息用于查询违章查询"
+            android:visibility="gone" />
 
         <Button
             android:id="@+id/btQuery"

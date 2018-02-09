@@ -1,16 +1,15 @@
 package com.ddj.dudujia.fragment
 
 import android.app.Activity
+import android.content.DialogInterface
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.ddj.dudujia.R
-import com.ddj.dudujia.activity.LoginActivity
-import com.ddj.dudujia.activity.MainActivity
-import com.ddj.dudujia.activity.OfflineReportActivity
-import com.ddj.dudujia.activity.SettingActivity
+import com.ddj.dudujia.activity.*
 import com.ddj.dudujia.base.BaseFragment
 import com.ddj.dudujia.common.CommonMethod
 import com.ddj.dudujia.common.StaticValue
@@ -42,13 +41,16 @@ class MineFragment : BaseFragment() {
                 startActivityForResult(intent, 102)
             }
         }
-        rlMyReport.onClick {
+        rlJiance.onClick {
             if (CommonMethod.isLogin()) {
                 startActivity(Intent(activity, OfflineReportActivity::class.java))
             } else {
                 var intent = Intent(activity, LoginActivity::class.java)
                 startActivityForResult(intent, 102)
             }
+        }
+        rlMyReport.onClick {
+            startActivity(Intent(activity, CarHistoryReportActivity::class.java))
         }
         rlCar.onClick {
             if (CommonMethod.isLogin()) {
@@ -61,6 +63,20 @@ class MineFragment : BaseFragment() {
 
         aimvAccount.onClick {
 
+        }
+
+
+        aimvAbout.onClick {
+            startActivity(Intent(activity, AboutActivity::class.java))
+        }
+
+        aimvHelp.onClick {
+            (activity as MainActivity).showDialog("联系客服", activity.getString(R.string.service_phone), "拨打", DialogInterface.OnClickListener { p0, p1 ->
+                val intent = Intent(Intent.ACTION_DIAL)
+                val data = Uri.parse("tel:" + activity.getString(R.string.service_phone))
+                intent.data = data
+                startActivity(intent)
+            })
         }
     }
 

@@ -1,15 +1,17 @@
 package com.ddj.dudujia.activity
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
-import android.widget.EditText
 import com.ddj.dudujia.R
 import com.ddj.dudujia.base.BaseActivity
-import com.ddj.dudujia.bean.LoginBean
+import com.ddj.dudujia.base.BaseBean
+import com.ddj.dudujia.common.CommonMethod
 import com.ddj.dudujia.http.HttpResult
-import com.ddj.dudujia.view.LicenseKeyboardUtil
 import com.first.basket.http.HttpMethods
 import com.first.basket.http.HttpResultSubscriber
 import com.first.basket.http.TransformUtils
+import com.first.basket.utils.ToastUtil
 import kotlinx.android.synthetic.main.activity_illeagal.*
 import org.jetbrains.anko.sdk25.coroutines.onClick
 
@@ -24,31 +26,52 @@ class IlleagalActivity : BaseActivity() {
     }
 
     private fun initView() {
-        var inputbox1 = this.findViewById(R.id.et_car_license_inputbox1) as EditText
-        var inputbox2 = this.findViewById(R.id.et_car_license_inputbox2) as EditText
-        var inputbox3 = this.findViewById(R.id.et_car_license_inputbox3) as EditText
-        var inputbox4 = this.findViewById(R.id.et_car_license_inputbox4) as EditText
-        var inputbox5 = this.findViewById(R.id.et_car_license_inputbox5) as EditText
-        var inputbox6 = this.findViewById(R.id.et_car_license_inputbox6) as EditText
-        var inputbox7 = this.findViewById(R.id.et_car_license_inputbox7) as EditText
-
-        ll_license_input_boxes_content.onClick {
-            var keyboardUtil = LicenseKeyboardUtil(this@IlleagalActivity, arrayOf<EditText>(inputbox1, inputbox2, inputbox3, inputbox4, inputbox5, inputbox6, inputbox7))
-            keyboardUtil.showKeyboard()
+        btSelProvince.onClick {
+            myStartActivityForResult(Intent(this@IlleagalActivity, ProvinceActivity::class.java), 100)
         }
-
-
-
 
         btQuery.onClick {
+            var licensePlate = btSelProvince.text.toString() + etLicensePlate.text.toString()
+            var engineNumber = etEngineNumber.text.toString()
+            var vin = etVin.text.toString()
+            if (licensePlate.length < 6) {
+                ToastUtil.showToast(getString(R.string.plate_error))
+                return@onClick
+            }
+            if (vin.length < 17) {
+                ToastUtil.showToast(getString(R.string.vin_error))
+                return@onClick
+            }
 
+            var carType = if (rbCarSmall.isSelected) {
+                "0"
+            } else {
+                "1"
+            }
+
+            HttpMethods.createService()
+                    .doIlleagalQuery("do_Illegalinquiry", CommonMethod.getUserId(), licensePlate, carType, engineNumber, vin)
+                    .compose(TransformUtils.defaultSchedulers())
+                    .subscribe(object : HttpResultSubscriber<HttpResult<BaseBean>>() {
+                        override fun onNext(t: HttpResult<BaseBean>) {
+                            super.onNext(t)
+                            ToastUtil.showToast("查询成功")
+                        }
+
+                        override fun onError(e: Throwable) {
+                            super.onError(e)
+                            ToastUtil.showToast(e.message)
+                        }
+                    })
         }
+    }
 
-//        HttpMethods.createService()
-//                .doIlleagalQuery("do_Illegalinquiry", phonenumber, code)
-//                .compose(TransformUtils.defaultSchedulers())
-//                .subscribe(object : HttpResultSubscriber<HttpResult<LoginBean>>() {
-//                }
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (resultCode == Activity.RESULT_OK && requestCode == 100) {
+            var region = data?.getStringExtra("region")
+            btSelProvince.text = region
+        }
     }
 
 }
