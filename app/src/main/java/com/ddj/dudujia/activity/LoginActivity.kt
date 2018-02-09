@@ -44,27 +44,32 @@ class LoginActivity : BaseActivity(), View.OnClickListener {
     }
 
     private fun initListener() {
+        ivFinish.onClick {
+            finish()
+        }
+
         btSendCode.onClick {
             if (!CommonMethod.isMobile(etPhone.getText().toString())) {
                 ToastUtil.showToast(this@LoginActivity, "请输入正确的手机号")
                 return@onClick
             }
-            getLoginVerifyCode(etPhone.getText().toString())
+            getLoginVerifyCode(etPhone.text.toString())
+
         }
 
         btLogin.onClick {
             var phone = etPhone.text.toString()
             var code = etCode.text.toString()
 
-            if(!CommonMethod.isMobile(phone)){
+            if (!CommonMethod.isMobile(phone)) {
                 ToastUtil.showToast("请输入正确的手机号手机号")
                 return@onClick
             }
-            if(code==""){
+            if (code == "") {
                 ToastUtil.showToast("请输入验证码")
                 return@onClick
             }
-            doLogin(phone,code)
+            doLogin(phone, code)
         }
     }
 
@@ -148,7 +153,7 @@ class LoginActivity : BaseActivity(), View.OnClickListener {
     private fun setButtonStatus(isComplete: Boolean) {
         if (isComplete) {
             btSendCode.background = resources.getDrawable(R.color.colorMain)
-            btSendCode.setTextColor(resources.getColor(R.color.white))
+            btSendCode.setTextColor(resources.getColor(R.color.black))
             btSendCode.isClickable = true
             btSendCode.text = "获取验证码"
             btSendCode.setOnClickListener(this)

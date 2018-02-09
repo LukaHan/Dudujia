@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="20dp"
-            android:text="值得信赖的二手车检测专家"
+            android:text="新移动互联网车主平台"
             android:textColor="@color/gray33"
             android:textSize="17sp" />
 
@@ -48,15 +48,25 @@
             android:textSize="10sp" />
 
         <TextView
+            android:id="@+id/tvGoCarList"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
             android:layout_marginBottom="10dp"
             android:layout_marginRight="20dp"
-            android:text="点击开始笃笃驾"
+            android:text="点击成为好伙伴"
             android:textColor="@color/gray66"
             android:textSize="14sp" />
+
+        <ImageView
+            android:visibility="gone"
+            android:layout_marginBottom="10dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/ic_mine_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
     </RelativeLayout>
 
     <LinearLayout

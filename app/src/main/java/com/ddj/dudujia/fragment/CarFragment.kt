@@ -106,7 +106,7 @@ class CarFragment : BaseFragment() {
 
                     override fun onCompleted() {
                         super.onCompleted()
-                        if(refreshLayout!=null){
+                        if (refreshLayout != null) {
                             refreshLayout.isRefreshing = false
                         }
 
@@ -122,11 +122,13 @@ class CarFragment : BaseFragment() {
     }
 
     fun setLoginStatus() {
-        if(CommonMethod.isLogin()){
+        if (CommonMethod.isLogin()) {
             getData()
-        }else{
-            llNoCar.visibility = View.VISIBLE
-            refreshLayout.visibility = View.GONE
+        } else {
+            if (llNoCar != null) {
+                llNoCar.visibility = View.VISIBLE
+                refreshLayout.visibility = View.GONE
+            }
         }
 
     }

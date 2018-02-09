@@ -6,14 +6,27 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.ddj.dudujia.view.TitleView
-        android:id="@+id/titleView"
+    <RelativeLayout
         android:layout_width="match_parent"
-        app:backBlack="false"
-        android:layout_height="wrap_content"
-        app:titleBackground="@color/colorMain"
-        app:titleColor="@color/white"
-        app:titleText="登录" />
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:src="@mipmap/icon_logo_login" />
+
+        <ImageView
+            android:id="@+id/ivFinish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:src="@mipmap/icon_x" />
+
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,21 +37,30 @@
         android:orientation="vertical">
 
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="手机号" />
+        <EditText
+            android:id="@+id/etPhone"
+            style="@style/LoginInputStyle"
+            android:background="@null"
+            android:hint="输入手机号"
+            android:inputType="numberDecimal"
+            android:maxLength="11" />
+
+        <include layout="@layout/layout_line" />
+
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp">
 
             <EditText
-                android:id="@+id/etPhone"
+                android:id="@+id/etCode"
                 style="@style/LoginInputStyle"
                 android:background="@null"
+                android:hint="输入验证码"
                 android:inputType="numberDecimal"
-                android:maxLength="11" />
+                android:maxLength="11"
+                android:textColor="@color/black" />
 
             <Button
                 android:id="@+id/btSendCode"
@@ -46,28 +68,18 @@
                 android:gravity="center" />
         </RelativeLayout>
 
-        <include layout="@layout/layout_line" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:text="验证码" />
-
-        <EditText
-            android:id="@+id/etCode"
-            style="@style/LoginInputStyle"
-            android:background="@null"
-            android:inputType="numberDecimal"
-            android:maxLength="11" />
-
-        <include layout="@layout/layout_line" />
+        <include
+            layout="@layout/layout_line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="40dp" />
 
         <Button
             android:id="@+id/btLogin"
             style="@style/ButtonStyle"
-            android:background="@color/colorMain"
-            android:text="登录" />
+            android:background="@color/colorPrimary"
+            android:text="验证" />
     </LinearLayout>
 
 </LinearLayout>

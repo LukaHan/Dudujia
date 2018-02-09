@@ -42,6 +42,10 @@ class HomeFragment : BaseFragment() {
 
     private fun initView() {
         recyclerView.layoutManager = LinearLayoutManager(activity)
+
+        tvGoCarList.onClick {
+            (activity as MainActivity).setCurrentPage(2)
+        }
     }
 
     private fun initData() {

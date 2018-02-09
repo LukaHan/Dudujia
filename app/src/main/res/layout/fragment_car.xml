@@ -25,25 +25,35 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="10dp"
-                android:text="@string/car"
-                android:textColor="@color/gray33"
-                android:textSize="12sp" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:background="@color/white"
+                android:layout_marginTop="2dp"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/car"
+                    android:textColor="@color/gray33"
+                    android:textSize="12sp" />
 
-            <Button
-                android:id="@+id/btAdd"
-                android:layout_width="152dp"
-                android:layout_height="56dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="25dp"
-                android:background="@color/colorPrimary"
-                android:text="添加"
-                android:textColor="@color/white"
-                android:textSize="24sp" />
+                <Button
+                    android:id="@+id/btAdd"
+                    android:layout_width="152dp"
+                    android:layout_height="56dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="25dp"
+                    android:background="@color/colorPrimary"
+                    android:text="添加"
+                    android:textColor="@color/white"
+                    android:textSize="24sp" />
+
+            </LinearLayout>
+
 
             <RelativeLayout
                 android:layout_width="match_parent"
