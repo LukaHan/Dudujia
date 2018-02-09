@@ -69,4 +69,7 @@ dependencies {
     implementation files('libs/OpenInstall_v2.1.1 2.jar')
     implementation files('libs/alipaySdk-20170922.jar')
     implementation files('libs/AXmlResourceParser.jar')
+    // 多dex配置
+    compile 'com.tencent.bugly:crashreport_upgrade:latest.release'
+    compile 'com.tencent.bugly:nativecrashreport:latest.release'
 }

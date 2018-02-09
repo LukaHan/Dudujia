@@ -106,7 +106,9 @@ class CarFragment : BaseFragment() {
 
                     override fun onCompleted() {
                         super.onCompleted()
-                        refreshLayout.isRefreshing = false
+                        if(refreshLayout!=null){
+                            refreshLayout.isRefreshing = false
+                        }
 
                     }
                 })

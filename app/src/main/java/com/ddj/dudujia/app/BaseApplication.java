@@ -13,6 +13,7 @@ import com.fm.openinstall.listener.AppInstallListener;
 import com.fm.openinstall.model.AppData;
 import com.fm.openinstall.model.Error;
 import com.tencent.bugly.Bugly;
+import com.tencent.bugly.crashreport.CrashReport;
 
 /**
  * Created by hanshaobo on 15/10/2017.
@@ -38,7 +39,7 @@ public class BaseApplication extends MultiDexApplication {
         if(isMainProcess()){
             OpenInstall.init(this);
         }
-
+        Bugly.init(getApplicationContext(), getString(R.string.bugly), true);
         initOpen();
     }
 
