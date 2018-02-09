@@ -1,5 +1,6 @@
 package com.ddj.dudujia.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.widget.SwipeRefreshLayout
 import android.support.v7.widget.LinearLayoutManager
@@ -8,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.ddj.dudujia.R
 import com.ddj.dudujia.activity.MainActivity
+import com.ddj.dudujia.activity.WebViewActivity
 import com.ddj.dudujia.base.BaseFragment
 import com.ddj.dudujia.base.BaseRecyclerAdapter
 import com.ddj.dudujia.bean.HomeBean
@@ -19,6 +21,7 @@ import com.first.basket.http.TransformUtils
 import com.first.basket.utils.LogUtils
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.item_recycler_home.view.*
+import org.jetbrains.anko.sdk25.coroutines.onClick
 
 /**
  * Created by hanshaobo on 01/12/2017.
@@ -46,6 +49,13 @@ class HomeFragment : BaseFragment() {
             view.tvTitle.text = newsBean.title
             view.tvHeat.text = newsBean.heat + "查看"
             ImageUtils.showImg(activity, newsBean.image, view.ivImg)
+
+            view.onClick {
+                var intent = Intent(activity,WebViewActivity::class.java)
+                intent.putExtra("url",mDatas[recyclerView.getChildAdapterPosition(view)].url)
+                intent.putExtra("title",mDatas[recyclerView.getChildAdapterPosition(view)].title)
+                startActivity(intent)
+            }
         }
         recyclerView.adapter = mAdapter
 
