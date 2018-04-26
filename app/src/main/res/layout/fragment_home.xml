@@ -33,17 +33,16 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="20dp"
-            android:text="新移动互联网车主平台"
             android:textColor="@color/gray33"
             android:textSize="17sp" />
 
         <TextView
+            android:id="@+id/tv1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/tv0"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="20dp"
-            android:text="TRUSTWORTHY USED CAR\nDETECTION EXPERTS"
             android:textColor="@color/gray66"
             android:textSize="10sp" />
 

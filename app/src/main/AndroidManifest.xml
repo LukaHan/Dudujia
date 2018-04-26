@@ -24,17 +24,15 @@
 
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
-
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-
-                <data android:scheme="opuoekym" />
+                <data android:scheme="bsnjs6" />
             </intent-filter>
         </activity>
 
         <meta-data
             android:name="com.openinstall.APP_KEY"
-            android:value="nlc7ss" />
+            android:value="bsnjs6"/>
 
         <activity
             android:name="com.tencent.bugly.beta.ui.BetaActivity"

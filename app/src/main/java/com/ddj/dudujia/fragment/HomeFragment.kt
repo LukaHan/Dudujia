@@ -89,5 +89,25 @@ class HomeFragment : BaseFragment() {
                         refreshLayout.isRefreshing = false
                     }
                 })
+
+
+//        HttpMethods.createService().getMainpageFromJava("1")
+//                .compose(TransformUtils.defaultSchedulers())
+//                .subscribe(object : HttpResultSubscriber<HttpResult<HomeBean>>() {
+//                    override fun onNext(t: HttpResult<HomeBean>) {
+//                        super.onNext(t)
+//                        tv0.text = t.result.data.mainTitle
+//                        tv1.text = t.result.data.submainTitle
+//                        mDatas.clear()
+//                        mDatas.addAll(t.result.data.news)
+//                        mAdapter.notifyDataSetChanged()
+//                    }
+//
+//                    override fun onCompleted() {
+//                        super.onCompleted()
+//                        (activity as MainActivity).hideLoading()
+//                        refreshLayout.isRefreshing = false
+//                    }
+//                })
     }
 }

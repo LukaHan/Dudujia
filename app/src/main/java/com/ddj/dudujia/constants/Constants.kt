@@ -10,6 +10,7 @@ class Constants {
         val PIC_URL: String = "https://img1.tking.cn/assets/img/2jrRKbfyDn.jpg"
 
         val BASE_API: String = "http://api.dudujia.com/ClientAPI.php/"
+        //        val BASE_API: String = "http://172.20.7.141:8080/"
         val BASE_WECHAT_API: String = "http://api.yhclzgc.com/API/"
 
         val BASE_IMG_URL: String = "http://img.dudujia.com/"

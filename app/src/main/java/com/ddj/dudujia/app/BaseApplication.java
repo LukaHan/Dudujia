@@ -43,6 +43,17 @@ public class BaseApplication extends MultiDexApplication {
         initOpen();
     }
 
+    public boolean isMainProcess() {
+        int pid = android.os.Process.myPid();
+        ActivityManager activityManager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
+        for (ActivityManager.RunningAppProcessInfo appProcess : activityManager.getRunningAppProcesses()) {
+            if (appProcess.pid == pid) {
+                return getApplicationInfo().packageName.equals(appProcess.processName);
+            }
+        }
+        return false;
+    }
+
     private void initOpen() {
         OpenInstall.getInstall(new AppInstallListener() {
             @Override
@@ -58,18 +69,6 @@ public class BaseApplication extends MultiDexApplication {
                 }
             }
         });
-
-    }
-
-    public boolean isMainProcess() {
-        int pid = android.os.Process.myPid();
-        ActivityManager activityManager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
-        for (ActivityManager.RunningAppProcessInfo appProcess : activityManager.getRunningAppProcesses()) {
-            if (appProcess.pid == pid) {
-                return getApplicationInfo().packageName.equals(appProcess.processName);
-            }
-        }
-        return false;
     }
 
     public static BaseApplication getInstance() {

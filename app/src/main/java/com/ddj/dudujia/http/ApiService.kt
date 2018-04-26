@@ -86,4 +86,10 @@ interface ApiService {
     @FormUrlEncoded
     @POST("ClientAPI.php")
     fun checkVin(@Field("action") action: String, @Field("vinnum") vinnum: String): Observable<HttpResult<CheckVinBean>>
+
+
+    //java首页
+    @FormUrlEncoded
+    @POST("getJson")
+    fun getMainpageFromJava(@Field("page") action: String): Observable<HttpResult<HomeBean>>
 }
