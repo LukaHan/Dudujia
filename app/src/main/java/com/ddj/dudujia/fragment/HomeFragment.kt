@@ -78,6 +78,8 @@ class HomeFragment : BaseFragment() {
                 .subscribe(object : HttpResultSubscriber<HttpResult<HomeBean>>() {
                     override fun onNext(t: HttpResult<HomeBean>) {
                         super.onNext(t)
+                        tv0.text = t.result.data.mainTitle
+                        tv1.text = t.result.data.submainTitle
                         mDatas.clear()
                         mDatas.addAll(t.result.data.news)
                         mAdapter.notifyDataSetChanged()
