@@ -9,10 +9,13 @@ import com.ddj.dudujia.R
 import com.ddj.dudujia.base.BaseActivity
 import com.ddj.dudujia.base.BaseBean
 import com.ddj.dudujia.bean.AliBean
+import com.ddj.dudujia.bean.CodeBean
 import com.ddj.dudujia.bean.ReservationBean
 import com.ddj.dudujia.common.CommonMethod
 import com.ddj.dudujia.common.StaticValue
 import com.ddj.dudujia.http.HttpResult
+import com.ddj.dudujia.utils.CountDownUtil
+import com.ddj.dudujia.utils.CountDownUtil.countDown
 import com.ddj.dudujia.utils.ImageUtils
 import com.ddj.dudujia.utils.SPUtil
 import com.ddj.dudujia.utils.alipay.PayResult
@@ -49,7 +52,43 @@ class JianceActivity : BaseActivity() {
                 })
     }
 
+    private fun getLoginVerifyCode(phonenumber: String) {
+
+        HttpMethods.createService()
+                .getCode("get_code", phonenumber)
+                .compose(TransformUtils.defaultSchedulers())
+                .subscribe(object : HttpResultSubscriber<HttpResult<CodeBean>>() {
+                    override fun onNext(t: HttpResult<CodeBean>) {
+                        super.onNext(t)
+                        countDown()
+                    }
+                })
+    }
+
+    private fun countDown() {
+        CountDownUtil.countDown(120, object : CountDownUtil.onCountDownListener {
+            override fun onCountDownNext(integer: Int?) {
+                tvSend.text = integer.toString() + "秒后重新发送"
+            }
+
+            override fun onCountDownError(e: Throwable?) {
+
+            }
+
+            override fun onCountDownComplete() {
+//                countDownComplete()
+            }
+        })
+    }
+
     private fun initView() {
+        tvSend.onClick {
+            if (!CommonMethod.isMobile(etPhone.text.toString())) {
+                ToastUtil.showToast(this@JianceActivity, "请输入正确的手机号")
+                return@onClick
+            }
+            getLoginVerifyCode(etPhone.text.toString())
+        }
 
         btYuyue.onClick {
             var phone = etPhone.text.toString()
@@ -87,10 +126,10 @@ class JianceActivity : BaseActivity() {
 
             HttpMethods.createService().doPayForAlipay("do_payforalipay", map)
                     .compose(TransformUtils.defaultSchedulers())
-                    .subscribe(object : HttpResultSubscriber<HttpResult<BaseBean>>() {
-                        override fun onNext(t: HttpResult<BaseBean>) {
+                    .subscribe(object : HttpResultSubscriber<HttpResult<AliBean>>() {
+                        override fun onNext(t: HttpResult<AliBean>) {
                             super.onNext(t)
-
+                            aliPay(t.result.data)
                         }
                     })
 

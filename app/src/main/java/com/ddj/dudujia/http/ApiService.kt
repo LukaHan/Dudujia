@@ -75,7 +75,7 @@ interface ApiService {
     //支付宝支付线下检测费用
     @FormUrlEncoded
     @POST("ClientAPI.php")
-    fun doPayForAlipay(@Field("action") action: String, @FieldMap map: HashMap<String, String>): Observable<HttpResult<BaseBean>>
+    fun doPayForAlipay(@Field("action") action: String, @FieldMap map: HashMap<String, String>): Observable<HttpResult<AliBean>>
 
     //修改用户名
     @FormUrlEncoded

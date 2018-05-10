@@ -26,13 +26,13 @@
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="bsnjs6" />
+                <data android:scheme="o1t3rz" />
             </intent-filter>
         </activity>
 
         <meta-data
             android:name="com.openinstall.APP_KEY"
-            android:value="bsnjs6"/>
+            android:value="o1t3rz"/>
 
         <activity
             android:name="com.tencent.bugly.beta.ui.BetaActivity"

@@ -90,5 +90,5 @@ dependencies {
 //    compile 'com.tencent.bugly:crashreport_upgrade:latest.release'
 //    compile 'com.tencent.bugly:nativecrashreport:latest.release'
     implementation files('libs/OpenInstall_v2.1.1.jar')
-    compile(name: 'ShareInstall_1.0.3', ext: 'aar')
+//    compile(name: 'ShareInstall_1.0.3', ext: 'aar')
 }

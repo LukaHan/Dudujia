@@ -93,10 +93,6 @@ class LoginActivity : BaseActivity(), View.OnClickListener {
                         super.onNext(t)
                         countDown()
                     }
-
-                    override fun onError(e: Throwable) {
-                        super.onError(e)
-                    }
                 })
     }
 
@@ -146,7 +142,6 @@ class LoginActivity : BaseActivity(), View.OnClickListener {
             override fun onCountDownComplete() {
                 countDownComplete()
             }
-//            }
         })
     }
 
