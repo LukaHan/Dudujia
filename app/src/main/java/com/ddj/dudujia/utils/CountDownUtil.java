@@ -23,7 +23,7 @@ public class CountDownUtil {
      * @param seconds  单位为秒
      * @param listener 监听
      */
-    public static void countDown(int seconds, final onCountDownListener listener) {
+    public static void  countDown(int seconds, final onCountDownListener listener) {
         if (seconds < 0) seconds = 0;
 
         final int countTime = seconds;

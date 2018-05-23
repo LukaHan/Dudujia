@@ -91,4 +91,6 @@ dependencies {
 //    compile 'com.tencent.bugly:nativecrashreport:latest.release'
     implementation files('libs/OpenInstall_v2.1.1.jar')
 //    compile(name: 'ShareInstall_1.0.3', ext: 'aar')
+
+    compile 'com.android.support:cardview-v7:26.1.0'
 }

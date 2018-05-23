@@ -62,7 +62,7 @@ class MineFragment : BaseFragment() {
         }
 
         aimvAccount.onClick {
-
+            startActivity(Intent(activity, HealthReportActivity::class.java))
         }
 
 

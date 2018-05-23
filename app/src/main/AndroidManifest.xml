@@ -70,6 +70,7 @@
         <activity android:name=".activity.CarHistoryActivity" />
         <activity android:name=".activity.AboutActivity" />
         <activity android:name=".activity.CarHistoryReportActivity" />
+        <activity android:name=".activity.HealthReportActivity" />
     </application>
 
 </manifest>

@@ -111,7 +111,7 @@
                     android:hint="VIN"
                     android:padding="10dp" />
 
-                <include layout="@layout/layout_line"></include>
+                <include layout="@layout/layout_line" />
 
                 <EditText
                     android:id="@+id/etTime"
@@ -122,7 +122,7 @@
                     android:hint="20171221"
                     android:padding="10dp" />
 
-                <include layout="@layout/layout_line"></include>
+                <include layout="@layout/layout_line" />
 
                 <EditText
                     android:id="@+id/etAddress"
@@ -133,7 +133,7 @@
                     android:hint="黄浦区九江路"
                     android:padding="10dp" />
 
-                <include layout="@layout/layout_line"></include>
+                <include layout="@layout/layout_line" />
 
                 <TextView
                     android:layout_width="wrap_content"
