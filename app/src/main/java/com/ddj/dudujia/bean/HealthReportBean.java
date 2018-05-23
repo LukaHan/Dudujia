@@ -1,8 +1,9 @@
 package com.ddj.dudujia.bean;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class HealthReportBean {
+public class HealthReportBean implements Serializable {
 
     /**
      * data : {"cjmc":"奥迪汽车","pp":"奥迪","cx":"A8L","vin":"ZXCVBNMASDFGHJKLW","license":"沪A00001","mileage":"3000","color":"红色","emission":"国5","displacement":"3.0T","productionyear":"2012","summary":[{"item":"重大事故","level":"3","times":"3"},{"item":"非火烧","level":"1","times":""},{"item":"非泡水","level":"1","times":""},{"item":"里程有风险","level":"1","times":""},{"item":"大额理赔","level":"2","times":"1"},{"item":"过户次数","level":"2","times":"2"}],"insurance":{"insuranceid":"100000","compensation":"75000","recording":"5","commercial":"天安保险公司","commercialnumber":"190099009090","commercialtime":"2019-5-30","compulsory":"天安保险公司","compulsorynumber":"180099001231","compulsorytime":"2019-5-30","insurancereporttime":"2018-5-23"},"carhistory":{"carhistoryid":"100000","summaryitems":[{"item":"重大事故","level":"3","project":"A柱切割；"},{"item":"重大事故","level":"3","project":"后保险杠做漆；局部钣金；"},{"item":"一般事故","level":"2","project":"前保险杠做漆；拆装前保险杠及中网；"}]},"testing":{"testingid":"100000","testingitems":[{"item":"前保险杠","level":"2","project":"重新喷漆；划痕；凹陷；"},{"item":"前挡风玻璃","level":"2","project":"断裂；"},{"item":"后保险杠","level":"2","project":"重新喷漆；凹陷；"},{"item":"引擎盖","level":"2","project":"重新喷漆；凹陷；褪色；"}]},"images":{"image1":"","image2":""}}
@@ -18,7 +19,7 @@ public class HealthReportBean {
         this.data = data;
     }
 
-    public static class DataBean {
+    public static class DataBean implements Serializable {
         /**
          * cjmc : 奥迪汽车
          * pp : 奥迪
@@ -173,7 +174,7 @@ public class HealthReportBean {
             this.summary = summary;
         }
 
-        public static class InsuranceBean {
+        public static class InsuranceBean implements Serializable {
             /**
              * insuranceid : 100000
              * compensation : 75000
@@ -279,7 +280,7 @@ public class HealthReportBean {
             }
         }
 
-        public static class CarhistoryBean {
+        public static class CarhistoryBean implements Serializable {
             /**
              * carhistoryid : 100000
              * summaryitems : [{"item":"重大事故","level":"3","project":"A柱切割；"},{"item":"重大事故","level":"3","project":"后保险杠做漆；局部钣金；"},{"item":"一般事故","level":"2","project":"前保险杠做漆；拆装前保险杠及中网；"}]
@@ -304,7 +305,7 @@ public class HealthReportBean {
                 this.summaryitems = summaryitems;
             }
 
-            public static class SummaryitemsBean {
+            public static class SummaryitemsBean implements Serializable {
                 /**
                  * item : 重大事故
                  * level : 3
@@ -341,7 +342,7 @@ public class HealthReportBean {
             }
         }
 
-        public static class TestingBean {
+        public static class TestingBean implements Serializable {
             /**
              * testingid : 100000
              * testingitems : [{"item":"前保险杠","level":"2","project":"重新喷漆；划痕；凹陷；"},{"item":"前挡风玻璃","level":"2","project":"断裂；"},{"item":"后保险杠","level":"2","project":"重新喷漆；凹陷；"},{"item":"引擎盖","level":"2","project":"重新喷漆；凹陷；褪色；"}]
@@ -366,7 +367,7 @@ public class HealthReportBean {
                 this.testingitems = testingitems;
             }
 
-            public static class TestingitemsBean {
+            public static class TestingitemsBean implements Serializable {
                 /**
                  * item : 前保险杠
                  * level : 2
@@ -403,7 +404,7 @@ public class HealthReportBean {
             }
         }
 
-        public static class ImagesBean {
+        public static class ImagesBean implements Serializable {
             /**
              * image1 :
              * image2 :
@@ -429,7 +430,7 @@ public class HealthReportBean {
             }
         }
 
-        public static class SummaryBean {
+        public static class SummaryBean implements Serializable {
             /**
              * item : 重大事故
              * level : 3

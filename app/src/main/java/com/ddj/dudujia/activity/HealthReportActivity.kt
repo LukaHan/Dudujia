@@ -1,5 +1,6 @@
 package com.ddj.dudujia.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.SimpleAdapter
 import com.ddj.dudujia.R
@@ -10,13 +11,14 @@ import com.ddj.dudujia.view.OnlineInfoView
 import com.first.basket.http.HttpMethods
 import com.first.basket.http.HttpResultSubscriber
 import com.first.basket.http.TransformUtils
-import com.first.basket.utils.LogUtils
 import kotlinx.android.synthetic.main.activity_health_report.*
 import kotlinx.android.synthetic.main.layout_insurance.*
 import kotlinx.android.synthetic.main.layout_report_title.*
 import org.jetbrains.anko.sdk25.coroutines.onClick
 
 class HealthReportActivity : BaseActivity() {
+    private lateinit var data: HealthReportBean.DataBean
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_health_report)
@@ -27,9 +29,23 @@ class HealthReportActivity : BaseActivity() {
 
     private fun initListener() {
         tvAll.onClick {
+            var intent = Intent(this@HealthReportActivity, ReportBasicActivity::class.java)
+            intent.putExtra("data", data)
+            startActivity(intent)
+        }
+        tvMoreInsurance.onClick {
 
         }
-
+        tvMoreOnline.onClick {
+            var intent = Intent(this@HealthReportActivity, CarHistoryReportActivity::class.java)
+//            intent.putExtra("data",data)
+            startActivity(intent)
+        }
+        tvMore267.onClick {
+            var intent = Intent(this@HealthReportActivity, CarBasicActivity::class.java)
+            intent.putExtra("reportid",data.testing.testingid)
+            startActivity(intent)
+        }
 
     }
 
@@ -42,15 +58,16 @@ class HealthReportActivity : BaseActivity() {
                         setData(t.result.data)
                     }
                 })
-
     }
 
+
     private fun setData(data: HealthReportBean.DataBean) {
+        this.data = data
         tvBrand.text = data.pp + " " + data.cx
         tvVin.text = data.vin
         tvLicense.text = data.license
 
-        tvXSLC.text = data.mileage
+        tvXSLC.text = data.mileage + "km"
         tvCSYS.text = data.color
         tvPFBZ.text = data.emission
         tvPL.text = data.displacement
@@ -59,13 +76,13 @@ class HealthReportActivity : BaseActivity() {
         setSummaryData(data)
         setInsurance(data.insurance)
 
-        for (i in 0 until data.carhistory.summaryitems.size){
+        for (i in 0 until data.carhistory.summaryitems.size) {
             var item = data.carhistory.summaryitems[i]
             var onlineInfo = OnlineInfoView(this)
             onlineInfo.setItemData(item.item, item.level, item.project)
             llOnlineContainer.addView(onlineInfo)
         }
-        for (i in 0 until data.testing.testingitems.size){
+        for (i in 0 until data.testing.testingitems.size) {
             var item = data.testing.testingitems[i]
             var onlineInfo = OnlineInfoView(this)
             onlineInfo.setItemData(item.item, item.level, item.project)

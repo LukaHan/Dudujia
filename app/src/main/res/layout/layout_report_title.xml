@@ -83,6 +83,7 @@
                 android:src="@mipmap/ic_rep_mill" />
 
             <TextView
+                android:textStyle="bold"
                 android:id="@+id/tvXSLC"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -125,6 +126,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="5dp"
                 android:layout_toRightOf="@id/iv1"
+                android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="12sp"
                 tools:text="行驶里程" />
@@ -170,6 +172,7 @@
                 android:layout_toRightOf="@id/iv2"
                 android:textColor="@color/black"
                 android:textSize="12sp"
+                android:textStyle="bold"
                 tools:text="行驶里程" />
         </RelativeLayout>
 
@@ -205,6 +208,7 @@
                 android:layout_toRightOf="@id/iv3"
                 android:textColor="@color/black"
                 android:textSize="12sp"
+                android:textStyle="bold"
                 tools:text="行驶里程" />
         </RelativeLayout>
     </LinearLayout>
