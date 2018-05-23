@@ -6,16 +6,16 @@ import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
-public class DrawableCenterTextview extends TextView {
-    public DrawableCenterTextview(Context context) {
+public class DrawableCenterTextView extends TextView {
+    public DrawableCenterTextView(Context context) {
         super(context);
     }
 
-    public DrawableCenterTextview(Context context,  AttributeSet attrs) {
+    public DrawableCenterTextView(Context context,  AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public DrawableCenterTextview(Context context,  AttributeSet attrs, int defStyleAttr) {
+    public DrawableCenterTextView(Context context,  AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 

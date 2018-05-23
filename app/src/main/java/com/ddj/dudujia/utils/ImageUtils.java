@@ -7,10 +7,14 @@ import android.net.Uri;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.RequestBuilder;
 import com.ddj.dudujia.R;
 import com.ddj.dudujia.common.GlideApp;
 import com.ddj.dudujia.common.GlideOptions;
+import com.ddj.dudujia.common.GlideRequest;
 import com.first.basket.constants.Constants;
+
+import java.lang.annotation.Target;
 
 /**
  * Created by Luka on 2016/3/30.
@@ -28,6 +32,7 @@ public class ImageUtils {
 //                .error(R.mipmap.ic_placeholder)
                 .into(ivImg);
     }
+
 
     public static void showImg(Context context, int resourceId, ImageView ivImg, GlideOptions options) {
         GlideOptions opt = options;
