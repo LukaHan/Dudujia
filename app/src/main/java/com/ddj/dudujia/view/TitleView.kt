@@ -1,6 +1,7 @@
 package com.ddj.dudujia.view
 
 import android.content.Context
+import android.graphics.drawable.Drawable
 import android.text.TextUtils
 import android.util.AttributeSet
 import android.view.LayoutInflater
@@ -11,6 +12,8 @@ import android.widget.RelativeLayout
 import android.widget.TextView
 import com.ddj.dudujia.R
 import com.ddj.dudujia.base.BaseActivity
+import kotlinx.android.synthetic.main.layout_line.view.*
+import kotlinx.android.synthetic.main.layout_widget_title.view.*
 import org.jetbrains.anko.sdk25.coroutines.onClick
 
 
@@ -21,6 +24,7 @@ class TitleView : FrameLayout {
 
     private var mTitleText: String = ""
     private var mTitleMoreText: String = ""
+    private lateinit var mTitleMoreDrawable: Drawable
     private var mTitleColor: Int = context.resources.getColor(R.color.black)
     private var mTitleBackgroundColor = context.resources.getColor(R.color.white)
     private var mIsShowBack: Boolean = true
@@ -46,6 +50,8 @@ class TitleView : FrameLayout {
                             mTitleText = typedArray.getString(it)
                         R.styleable.TitleView_titleMoreText ->
                             mTitleMoreText = typedArray.getString(it)
+                        R.styleable.TitleView_titleMoreDrawable ->
+                            mTitleMoreDrawable = typedArray.getDrawable(it)
                         R.styleable.TitleView_titleBackground ->
                             mTitleBackgroundColor = typedArray.getColor(it, context.resources.getColor(R.color.white))
                         R.styleable.TitleView_titleColor ->
@@ -95,10 +101,20 @@ class TitleView : FrameLayout {
         tvMore.text = text
     }
 
+    fun setMoreDrawable(drawable: Drawable) {
+        ivMore.setImageDrawable(drawable)
+    }
+
+
+
     fun setTitle(text: String?) {
         if (!TextUtils.isEmpty(text)) {
             tvTitle.text = text
             postInvalidate()
         }
+    }
+
+    fun showDivider(visible: Int) {
+        llLine.visibility = visible
     }
 }

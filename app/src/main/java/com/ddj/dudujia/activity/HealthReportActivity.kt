@@ -42,7 +42,7 @@ class HealthReportActivity : BaseActivity() {
             startActivity(intent)
         }
         tvMore267.onClick {
-            var intent = Intent(this@HealthReportActivity, CarBasicActivity::class.java)
+            var intent = Intent(this@HealthReportActivity, JianceCenterActivity::class.java)
             intent.putExtra("reportid",data.testing.testingid)
             startActivity(intent)
         }

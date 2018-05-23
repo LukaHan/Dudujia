@@ -4,6 +4,7 @@
     <declare-styleable name="TitleView">
         <attr name="titleText" format="string" />
         <attr name="titleMoreText" format="string" />
+        <attr name="titleMoreDrawable" format="integer" />
         <attr name="titleColor" format="color" />
         <attr name="showBack" format="boolean" />
         <attr name="backBlack" format="boolean" />

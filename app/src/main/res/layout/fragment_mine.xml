@@ -3,208 +3,460 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/grayF6"
     android:orientation="vertical">
+
+    <com.ddj.dudujia.view.TitleView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        titlemoreDrawable
+        app:titleText="个人中心" />
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/grayF6">
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="30dp">
 
-        <ImageView
-            android:id="@+id/ivMineTop"
-            android:layout_width="match_parent"
-            android:layout_height="144dp"
-            android:scaleType="fitXY"
-            android:src="@mipmap/ic_mine_top" />
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:layout_marginTop="64dp">
-
-            <RelativeLayout
-                android:layout_width="275dp"
-                android:layout_height="match_parent"
-                android:background="@color/colorPrimary"
-                android:paddingLeft="15dp">
-
-                <TextView
-                    android:id="@+id/tvNickname"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:text="我的眼里全是吃的"
-                    android:textColor="@color/gray33"
-                    android:textSize="24sp" />
-
-                <TextView
-                    android:paddingLeft="4dp"
-                    android:paddingRight="4dp"
-                    android:id="@+id/tvUserType"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/tvNickname"
-                    android:layout_marginTop="10dp"
-                    android:background="@color/mine_bg_blue"
-                    tools:text="检测师"
-                    android:textColor="@color/white"
-                    android:textSize="10sp" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/tvUserType"
-                    android:layout_marginTop="18dp"
-                    android:src="@mipmap/ic_mine_edit" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/rlCar"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="5dp"
-                android:background="@color/white"
-                android:gravity="center_horizontal">
-
-                <ImageView
-                    android:id="@+id/ivCar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="10dp"
-                    android:src="@mipmap/ic_mine_car" />
-
-                <TextView
-                    android:id="@+id/tvCarNum"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="10dp"
-                    android:layout_toRightOf="@id/ivCar"
-                    android:textColor="@color/gray33"
-                    android:textSize="14sp" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/rlMyReport"
-                android:layout_width="80dp"
-                android:layout_height="70dp"
-                android:layout_alignParentRight="true"
-                android:layout_below="@id/rlCar"
-                android:layout_marginRight="5dp"
-                android:layout_marginTop="10dp"
-                android:background="@color/white"
-                android:gravity="center_horizontal">
-
-                <ImageView
-                    android:layout_marginTop="10dp"
-                    android:id="@+id/ivReport"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
-                    android:src="@mipmap/ic_mine_report" />
-
-                <TextView
-                    android:id="@+id/tvReportNum"
-                    android:layout_marginTop="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_toRightOf="@id/ivReport"
-                    android:textColor="@color/gray33"
-                    android:textSize="14sp" />
-
-                <TextView
-                    android:textColor="@color/gray33"
-                    android:textSize="14sp"
-                    android:layout_marginBottom="6dp"
-                    android:layout_alignParentBottom="true"
-                    android:text="车史报告"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-            </RelativeLayout>
-        </RelativeLayout>
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/rlJiance"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginTop="10dp"
-        android:background="@color/mine_bg_blue">
-
-        <ImageView
-            android:id="@+id/ivMineReportOffline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="20dp"
-            android:src="@mipmap/ic_mine_report_offline" />
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivAvatar"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="16dp"
+            app:civ_fill_color="@color/background" />
 
         <TextView
+            android:id="@+id/tvLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:layout_toRightOf="@id/ivMineReportOffline"
-            android:text="车辆检测报告"
-            android:textColor="@color/white"
-            android:textSize="14sp" />
+            android:layout_toRightOf="@id/ivAvatar"
+            android:text="立即登录"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
+            android:layout_below="@id/tvLogin"
             android:layout_marginBottom="10dp"
-            android:layout_toRightOf="@id/ivMineReportOffline"
-            android:text="AIS认证检测师 1+267项检测"
-            android:textColor="@color/white"
+            android:layout_toRightOf="@id/ivAvatar"
+            android:text="Hello,欢迎来到车主好伙伴"
+            android:textColor="@color/black"
             android:textSize="12sp" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true">
+
+            <ImageView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_mine_carsaler" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="车商认证"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+        </RelativeLayout>
     </RelativeLayout>
 
+    <include layout="@layout/layout_gap_8" />
 
-    <com.ddj.dudujia.view.AccountItemManagerView
-        android:id="@+id/aimvOrder"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:clickable="true"
-        android:focusable="true"
-        app:accountManagerTitle="我的订单"
-        android:visibility="gone"/>
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal">
 
-    <com.ddj.dudujia.view.AccountItemManagerView
-        android:id="@+id/aimvAccount"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="车辆服务"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="10dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="8dp"
+            android:background="@color/background" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:text="更多车辆服务，值得信赖"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:clickable="true"
-        android:focusable="true"
-        app:accountManagerTitle="账户明细" />
+        android:layout_marginTop="24dp"
+        android:orientation="horizontal">
 
-    <com.ddj.dudujia.view.AccountItemManagerView
-        android:id="@+id/aimvHelp"
+        <LinearLayout
+            android:id="@+id/llJKBG"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@mipmap/ic_mine_jkbg" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:text="健康报告"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llWDAC"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@mipmap/ic_mine_wdac" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:text="我的爱车"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llWDDD"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@mipmap/ic_mine_wddd" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:text="我的订单"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llZHMX"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/ivMore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@mipmap/ic_mine_zhmx" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:text="账户明细"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:clickable="true"
-        android:focusable="true"
-        app:accountManagerTitle="帮助中心" />
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="32dp"
+        android:orientation="horizontal">
 
-    <com.ddj.dudujia.view.AccountItemManagerView
-        android:id="@+id/aimvAbout"
+        <LinearLayout
+            android:id="@+id/llCWDD"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@mipmap/ic_mine_cwdd" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:text="车务订单"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:visibility="invisible">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@mipmap/ic_mine_wdac" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:text="我的爱车"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:visibility="invisible">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@mipmap/ic_mine_wddd" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:text="我的订单"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:visibility="invisible">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@mipmap/ic_mine_zhmx" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:text="账户明细"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <include layout="@layout/layout_gap_8" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:text="个人服务"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:clickable="true"
-        android:focusable="true"
-        app:accountManagerTitle="关于我们" />
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="32dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@mipmap/ic_mine_cwcs" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:text="成为车商"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@mipmap/ic_mine_bzzx" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:text="帮助中心"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@mipmap/ic_mine_gywm" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:text="关于我们"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:visibility="invisible">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@mipmap/ic_mine_zhmx" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:text="账户明细"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        android:gravity="center_horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="24dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_mine_logo" />
+
+            <TextView
+                android:id="@+id/tvVersion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="123"
+                android:textColor="@color/black"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+    </RelativeLayout>
 </LinearLayout>
