@@ -90,4 +90,25 @@ public class BaseApplication extends MultiDexApplication {
     public static void setHandler(Handler mHandler) {
         BaseApplication.mHandler = mHandler;
     }
+
+
+    public void share(String path) {
+//        OnekeyShare oks = new OnekeyShare();
+//        //关闭sso授权
+//        oks.disableSSOWhenAuthorize();
+//        oks.setImagePath(path);
+//
+//        //自定义
+//        oks.setShareContentCustomizeCallback(new ShareContentCustomizeCallback() {
+//            @Override
+//            public void onShare(Platform platform, Platform.ShareParams paramsToShare) {
+//                //Wechat    WechatMoments   SinaWeibo   QQ
+//                String name = platform.getName();
+//                LogUtil.d("cmlog", "name:" + name);
+//            }
+//        });
+//
+//        // 启动分享GUI
+//        oks.show(this);
+    }
 }

@@ -160,12 +160,12 @@ public class CommonMethod {
         return c;
     }
 
-    public static String getChemingDir() {
+    public static String getDujDir() {
         String path = Environment.getExternalStorageDirectory().getPath();
         if (!path.endsWith("/"))
             path += "/";
 
-        return path + "cheming/";
+        return path + "ddj/";
     }
 
 

@@ -25,6 +25,7 @@ class TitleView : FrameLayout {
     private var mTitleText: String = ""
     private var mTitleMoreText: String = ""
     private lateinit var mTitleMoreDrawable: Drawable
+    private lateinit var mTitleMoreSecondDrawable: Drawable
     private var mTitleColor: Int = context.resources.getColor(R.color.black)
     private var mTitleBackgroundColor = context.resources.getColor(R.color.white)
     private var mIsShowBack: Boolean = true
@@ -53,6 +54,8 @@ class TitleView : FrameLayout {
                             mTitleMoreText = typedArray.getString(it)
                         R.styleable.TitleView_titleMoreDrawable ->
                             mTitleMoreDrawable = typedArray.getDrawable(it)
+                        R.styleable.TitleView_titleMoreSecondDrawable ->
+                            mTitleMoreSecondDrawable = typedArray.getDrawable(it)
                         R.styleable.TitleView_titleBackground ->
                             mTitleBackgroundColor = typedArray.getColor(it, context.resources.getColor(R.color.white))
                         R.styleable.TitleView_titleColor ->
@@ -93,16 +96,35 @@ class TitleView : FrameLayout {
             tvMore.visibility = View.VISIBLE
             tvMore.text = mTitleMoreText
         }
-//        if(mTitleMoreDrawable!=null){
+//        if (mTitleMoreDrawable != null) {
+//            ivMore.visibility = View.VISIBLE
 //            ivMore.setImageDrawable(mTitleMoreDrawable)
+//            ivMore.onClick { onclick.onMoreClick() }
+//        }
+
+//        if (mTitleMoreSecondDrawable != null) {
+//            ivMoreSecond.visibility = View.VISIBLE
+//            ivMoreSecond.setImageDrawable(mTitleMoreSecondDrawable)
+//            ivMoreSecond.onClick {
+//                if (onclick != null) {
+//                    onclick.onMoreSecondClick()
+//                }
+//            }
 //        }
         llLine.visibility = if (mShowDivider) View.VISIBLE else (View.GONE)
         postInvalidate()
+
+        if (ivMore != null) {
+
+        }
+
+        ivMoreSecond.onClick { onclick.onMoreSecondClick() }
+        tvMore.onClick { onclick.onMoreClick() }
     }
 
-    fun setOnMoreClickListener(listener: OnClickListener) {
-        tvMore.setOnClickListener(listener)
-    }
+//    fun setOnMoreClickListener(listener: OnClickListener) {
+//        tvMore.setOnClickListener(listener)
+//    }
 
     fun setMoreText(text: String) {
         tvMore.text = text
@@ -111,7 +133,6 @@ class TitleView : FrameLayout {
     fun setMoreDrawable(drawable: Drawable) {
         ivMore.setImageDrawable(drawable)
     }
-
 
 
     fun setTitle(text: String?) {
@@ -123,5 +144,16 @@ class TitleView : FrameLayout {
 
     fun showDivider(visible: Int) {
         llLine.visibility = visible
+    }
+
+    interface OnItemClick {
+        fun onMoreClick()
+        fun onMoreSecondClick()
+    }
+
+    private lateinit var onclick: OnItemClick
+
+    fun setOnMoreClickListenr(onclick: OnItemClick) {
+        this.onclick = onclick
     }
 }

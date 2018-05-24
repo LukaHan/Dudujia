@@ -58,7 +58,16 @@ class MineFragment : BaseFragment() {
             }
         }
 
-        titleView.setOnMoreClickListener(View.OnClickListener { startActivity(Intent(activity, SettingActivity::class.java)) })
+        titleView.setOnMoreClickListenr(object :TitleView.OnItemClick{
+            override fun onMoreClick() {
+                startActivity(Intent(activity, SettingActivity::class.java))
+            }
+
+            override fun onMoreSecondClick() {
+
+            }
+
+        })
 
         llAbout.onClick { startActivity(Intent(activity, AboutActivity::class.java)) }
         llWDAC.onClick { (activity as MainActivity).setCurrentPage(2) }

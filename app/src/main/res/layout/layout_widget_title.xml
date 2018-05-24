@@ -11,44 +11,38 @@
         <ImageView
             android:id="@+id/ivBack"
             style="@style/titleViewBack"
-            android:visibility="gone"/>
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/tvTitle"
             style="@style/titleViewText" />
 
-        <!--<ImageView-->
-            <!--android:id="@+id/ivMore"-->
-            <!--android:scaleType="center"-->
-            <!--style="@style/titleViewRightImage"-->
-            <!--android:src="@drawable/icon_back_white"-->
-            <!--android:visibility="gone" />-->
+        <ImageView
+            android:id="@+id/ivMore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:visibility="gone"
+            android:scaleType="center" />
 
-        <!--<ImageView-->
-            <!--android:id="@+id/ivMoreSecond"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_centerVertical="true"-->
-            <!--android:layout_toLeftOf="@id/ivMore"-->
-            <!--android:paddingLeft="10dp"-->
-            <!--android:paddingRight="10dp"-->
-            <!--android:scaleType="center"-->
-            <!--android:src="@drawable/icon_back_white"-->
-            <!--android:visibility="gone" />-->
-
+        <ImageView
+            android:id="@+id/ivMoreSecond"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/ivMore"
+            android:paddingLeft="10dp"
+            android:paddingRight="24dp"
+            android:scaleType="center" />
 
         <TextView
             android:id="@+id/tvMore"
             style="@style/titleViewRightImageText"
             android:visibility="gone" />
 
-        <ImageView
-            android:layout_centerVertical="true"
-            android:layout_marginRight="12dp"
-            android:id="@+id/ivMore"
-            android:layout_alignParentRight="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
     </RelativeLayout>
 
     <include

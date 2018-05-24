@@ -6,6 +6,7 @@
     android:orientation="vertical">
 
     <com.ddj.dudujia.view.TitleView
+        android:id="@+id/titleView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:titleText="360度车辆健康报告" />
@@ -13,11 +14,13 @@
     <include layout="@layout/layout_gap_8" />
 
     <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="none">
 
         <LinearLayout
+            android:id="@+id/llContent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
