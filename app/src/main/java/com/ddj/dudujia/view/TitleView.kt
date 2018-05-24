@@ -28,7 +28,8 @@ class TitleView : FrameLayout {
     private var mTitleColor: Int = context.resources.getColor(R.color.black)
     private var mTitleBackgroundColor = context.resources.getColor(R.color.white)
     private var mIsShowBack: Boolean = true
-    private var mBackBlack = true
+    private var mBackBlack: Boolean = true
+    private var mShowDivider = true
 
     private lateinit var tvTitle: TextView
     private lateinit var tvMore: TextView
@@ -60,6 +61,8 @@ class TitleView : FrameLayout {
                             mIsShowBack = typedArray.getBoolean(it, false)
                         R.styleable.TitleView_backBlack ->
                             mBackBlack = typedArray.getBoolean(it, false)
+                        R.styleable.TitleView_showDivider ->
+                            mShowDivider = typedArray.getBoolean(it, true)
                     }
                 }
         typedArray.recycle()
@@ -90,6 +93,10 @@ class TitleView : FrameLayout {
             tvMore.visibility = View.VISIBLE
             tvMore.text = mTitleMoreText
         }
+//        if(mTitleMoreDrawable!=null){
+//            ivMore.setImageDrawable(mTitleMoreDrawable)
+//        }
+        llLine.visibility = if (mShowDivider) View.VISIBLE else (View.GONE)
         postInvalidate()
     }
 

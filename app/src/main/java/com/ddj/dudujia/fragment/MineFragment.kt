@@ -7,12 +7,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.ddj.dudujia.R
-import com.ddj.dudujia.activity.HealthReportActivity
-import com.ddj.dudujia.activity.LoginActivity
-import com.ddj.dudujia.activity.MainActivity
-import com.ddj.dudujia.activity.SettingActivity
+import com.ddj.dudujia.activity.*
 import com.ddj.dudujia.base.BaseFragment
 import com.ddj.dudujia.common.CommonMethod
+import com.ddj.dudujia.common.StaticValue
+import com.ddj.dudujia.utils.SPUtil
+import com.ddj.dudujia.view.TitleView
 import kotlinx.android.synthetic.main.fragment_mine.*
 import org.jetbrains.anko.sdk25.coroutines.onClick
 
@@ -30,10 +30,15 @@ class MineFragment : BaseFragment() {
     }
 
     private fun initView() {
-        tvVersion.text = "v"+ CommonMethod.getVersionName()
+        tvVersion.text = "v" + CommonMethod.getVersionName()
         tvLogin.onClick {
-            var intent = Intent(activity, LoginActivity::class.java)
-            startActivityForResult(intent, 102)
+            if (CommonMethod.isLogin()) {
+
+            } else {
+                var intent = Intent(activity, LoginActivity::class.java)
+                startActivityForResult(intent, 102)
+            }
+
 
 //            if (CommonMethod.isLogin()) {
 //                var intent = Intent(activity, SettingActivity::class.java)
@@ -53,6 +58,10 @@ class MineFragment : BaseFragment() {
             }
         }
 
+        titleView.setOnMoreClickListener(View.OnClickListener { startActivity(Intent(activity, SettingActivity::class.java)) })
+
+        llAbout.onClick { startActivity(Intent(activity, AboutActivity::class.java)) }
+        llWDAC.onClick { (activity as MainActivity).setCurrentPage(2) }
 
 
 //        rlJiance.onClick {
@@ -104,17 +113,19 @@ class MineFragment : BaseFragment() {
     private fun setLoginStatus() {
         (activity as MainActivity).setLoginStatus()
 
-//        if (SPUtil.getBoolean(StaticValue.SP_LOGIN_STATUS, false)) {
-//            val username = SPUtil.getString(StaticValue.SP_LOGIN_USERNAME, "")
-//            tvNickname.text = username
+        if (SPUtil.getBoolean(StaticValue.SP_LOGIN_STATUS, false)) {
+            val username = SPUtil.getString(StaticValue.SP_LOGIN_USERNAME, "")
+            tvLogin.text = username
+            tvDes.text = "已认证信誉车商"
+
 //            tvUserType.visibility = View.VISIBLE
 //            tvUserType.text = SPUtil.getString(StaticValue.SP_LOGIN_USERTYPE, "")
 //            tvReportNum.text = SPUtil.getString(StaticValue.SP_LOGIN_USER_NUM_REPORT, "")
 //            tvCarNum.text = SPUtil.getString(StaticValue.SP_LOGIN_USER_NUM_CAR, "")
-//        } else {
-//            tvNickname.text = "登录/注册"
-//            tvUserType.visibility = View.GONE
-//        }
+        } else {
+            tvLogin.text = "立即登录"
+            tvDes.text = "Hello,欢迎来到车主好伙伴"
+        }
     }
 
     override fun onResume() {

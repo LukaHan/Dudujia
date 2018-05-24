@@ -6,9 +6,12 @@
     android:orientation="vertical">
 
     <com.ddj.dudujia.view.TitleView
+        android:id="@+id/titleView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        titlemoreDrawable
+        app:showBack="false"
+        app:showDivider="false"
+        app:titleMoreDrawable="@mipmap/ic_mine_setting"
         app:titleText="个人中心" />
 
     <RelativeLayout
@@ -22,6 +25,8 @@
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_marginLeft="16dp"
+            android:layout_marginRight="24dp"
+            android:src="@mipmap/ic_logo"
             app:civ_fill_color="@color/background" />
 
         <TextView
@@ -36,6 +41,7 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/tvDes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/tvLogin"
@@ -382,6 +388,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/llAbout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
