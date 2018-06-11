@@ -27,10 +27,45 @@ android {
             dirs 'libs'
         }
     }
+
+    //多套签名文件
+    signingConfigs {
+        customerKey {
+            storeFile file("keys/customer.keystore")
+            storePassword "czhhb1"
+            keyAlias "key0"
+            keyPassword "czhhb1"
+        }
+        bussinessKey {
+            storeFile file("keys/customer.keystore")
+            storePassword "czhhb1"
+            keyAlias "key0"
+            keyPassword "czhhb1"
+        }
+    }
+    //多版本管理
+    productFlavors {
+        def customerKey = signingConfigs.customerKey
+        def bussinessKey = signingConfigs.bussinessKey
+
+        customer {
+            signingConfig customerKey
+            applicationId "com.ddj.dudujia"
+            flavorDimensions '2'
+        }
+
+        bussiness {
+            signingConfig bussinessKey
+            applicationId "com.staff.dudujia"
+            flavorDimensions '1'
+        }
+    }
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     implementation 'com.android.support:appcompat-v7:26.1.0'
     compile 'com.android.support:recyclerview-v7:26.1.0'
