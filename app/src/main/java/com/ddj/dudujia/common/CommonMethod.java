@@ -4,6 +4,7 @@ import android.Manifest;
 import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
@@ -23,8 +24,10 @@ import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ScrollView;
 
+import com.ddj.dudujia.base.BaseActivity;
 import com.ddj.dudujia.utils.SPUtil;
 import com.ddj.dudujia.utils.UIUtils;
+import com.ddj.dudujia.view.LoginActivity;
 import com.first.basket.utils.ToastUtil;
 
 import java.io.File;
@@ -728,5 +731,9 @@ public class CommonMethod {
 
     public static String getUserId() {
         return SPUtil.getString(StaticValue.SP_LOGIN_USER_ID, "");
+    }
+
+    public static boolean isCusVer(){
+        return context.getPackageName().equals("com.ddj.dudujia");
     }
 }

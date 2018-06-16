@@ -9,10 +9,6 @@ import android.widget.TextView;
 
 import com.ddj.dudujia.R;
 import com.ddj.dudujia.base.CarListBean;
-import com.ddj.dudujia.common.CommonMethod;
-import com.ddj.dudujia.utils.ImageUtils;
-import com.first.basket.common.CommonMethod1;
-import com.first.basket.utils.LogUtils;
 
 import java.util.List;
 

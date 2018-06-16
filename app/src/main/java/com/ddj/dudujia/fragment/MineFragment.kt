@@ -35,8 +35,15 @@ class MineFragment : BaseFragment() {
             if (CommonMethod.isLogin()) {
 
             } else {
-                var intent = Intent(activity, LoginActivity::class.java)
-                startActivityForResult(intent, 102)
+                if(CommonMethod.isCusVer()){
+                    //客户版
+                    var intent = Intent(activity, LoginActivity::class.java)
+                    startActivityForResult(intent, 102)
+                }else{
+                    //员工版
+                    var intent = Intent(activity, com.ddj.dudujia.view.LoginActivity::class.java)
+                    startActivityForResult(intent, 102)
+                }
             }
 
 
