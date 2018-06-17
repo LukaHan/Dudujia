@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <!--<activity android:name="com.ddj.dudujia.activity.LoginActivity" />-->
+        <!--<activity android:name="LoginActivity" />-->
         <activity android:name="com.ddj.dudujia.activity.CheckYuyueActivity" />
         <activity android:name="com.ddj.dudujia.activity.CheckDingdanActivity" />
     </application>

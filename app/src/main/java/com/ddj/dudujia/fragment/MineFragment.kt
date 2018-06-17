@@ -11,6 +11,7 @@ import com.ddj.dudujia.activity.*
 import com.ddj.dudujia.base.BaseFragment
 import com.ddj.dudujia.common.CommonMethod
 import com.ddj.dudujia.common.StaticValue
+import com.ddj.dudujia.utils.ImageUtils
 import com.ddj.dudujia.utils.SPUtil
 import com.ddj.dudujia.view.TitleView
 import kotlinx.android.synthetic.main.fragment_mine.*
@@ -161,15 +162,21 @@ class MineFragment : BaseFragment() {
             tvJCGD.text = "检测工单"
             tvXSYJ.text = "销售业绩"
             tvCSLB.text = "车商列表"
-//            ivJCSQ.setImageResource(R.mipmap.ic_bus_mine_jianceshenqing)
-//            ivYYJC.setImageResource(R.mipmap.ic_bus_mine_yuyuejiance)
-//            ivJCGD.setImageResource(R.mipmap.ic_bus_mine_jiancegongdan)
-//            ivXSYJ.setImageResource(R.mipmap.ic_bus_mine_xiaoshouyeji)
-            ivCSLB.setImageResource(R.mipmap.ic_mine_cwcs)
+
+            ImageUtils.showImg(activity, R.mipmap.ic_bus_mine_jianceshenqing, ivJCSQ)
+            ImageUtils.showImg(activity, R.mipmap.ic_bus_mine_yuyuejiance, ivYYJC)
+            ImageUtils.showImg(activity, R.mipmap.ic_bus_mine_jiancegongdan, ivJCGD)
+            ImageUtils.showImg(activity, R.mipmap.ic_bus_mine_xiaoshouyeji, ivXSYJ)
+            ImageUtils.showImg(activity, R.mipmap.ic_mine_cwcs, ivCSLB)
 
             tvGRFW.visibility = View.GONE
             llGRFW.visibility = View.GONE
             llVersion.visibility = View.GONE
+            rlCSRZ.visibility = View.GONE
+
+            ivJCSQ.onClick {
+                startActivity(Intent(activity, CheckDingdanActivity::class.java))
+            }
         }
     }
 

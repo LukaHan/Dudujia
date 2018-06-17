@@ -72,6 +72,7 @@
         <activity android:name=".activity.CarHistoryReportActivity" />
         <activity android:name=".activity.HealthReportActivity" />
         <activity android:name=".activity.ReportBasicActivity" />
+        <activity android:name=".activity.CheckDingdanActivity" />
     </application>
 
 </manifest>
