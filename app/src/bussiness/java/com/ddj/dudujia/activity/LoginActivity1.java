@@ -12,7 +12,7 @@ import com.first.basket.utils.ToastUtil;
 
 import org.jetbrains.annotations.Nullable;
 
-public class LoginActivity extends BaseActivity implements ICodeLoginView {
+public class LoginActivity1 extends BaseActivity implements ICodeLoginView {
 
     private EditText etPhone;
     private EditText etCode;
