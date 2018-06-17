@@ -35,13 +35,13 @@ class MineFragment : BaseFragment() {
             if (CommonMethod.isLogin()) {
 
             } else {
-                if(CommonMethod.isCusVer()){
+                if (CommonMethod.isCusVer()) {
                     //客户版
                     var intent = Intent(activity, LoginActivity::class.java)
                     startActivityForResult(intent, 102)
-                }else{
+                } else {
                     //员工版
-                    var intent = Intent(activity, com.ddj.dudujia.view.LoginActivity::class.java)
+                    var intent = Intent(activity, LoginActivity::class.java)
                     startActivityForResult(intent, 102)
                 }
             }
@@ -65,7 +65,7 @@ class MineFragment : BaseFragment() {
             }
         }
 
-        titleView.setOnMoreClickListenr(object :TitleView.OnItemClick{
+        titleView.setOnMoreClickListenr(object : TitleView.OnItemClick {
             override fun onMoreClick() {
                 startActivity(Intent(activity, SettingActivity::class.java))
             }
@@ -117,7 +117,10 @@ class MineFragment : BaseFragment() {
 //                startActivity(intent)
 //            })
 //        }
+
+        isBusVer()
     }
+
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
@@ -148,4 +151,26 @@ class MineFragment : BaseFragment() {
         super.onResume()
         setLoginStatus()
     }
+
+
+    private fun isBusVer() {
+        if (!CommonMethod.isCusVer()) {
+            tvGongwei.text = "我的工位"
+            tvJCSQ.text = "检测申请"
+            tvYYJC.text = "预约检测"
+            tvJCGD.text = "检测工单"
+            tvXSYJ.text = "销售业绩"
+            tvCSLB.text = "车商列表"
+//            ivJCSQ.setImageResource(R.mipmap.ic_bus_mine_jianceshenqing)
+//            ivYYJC.setImageResource(R.mipmap.ic_bus_mine_yuyuejiance)
+//            ivJCGD.setImageResource(R.mipmap.ic_bus_mine_jiancegongdan)
+//            ivXSYJ.setImageResource(R.mipmap.ic_bus_mine_xiaoshouyeji)
+            ivCSLB.setImageResource(R.mipmap.ic_mine_cwcs)
+
+            tvGRFW.visibility = View.GONE
+            llGRFW.visibility = View.GONE
+            llVersion.visibility = View.GONE
+        }
+    }
+
 }

@@ -14,13 +14,11 @@ import com.ddj.dudujia.base.BaseFragment
 import com.ddj.dudujia.base.BaseRecyclerAdapter
 import com.ddj.dudujia.bean.HomeBean
 import com.ddj.dudujia.http.HttpResult
-import com.ddj.dudujia.utils.ImageUtils
 import com.first.basket.http.HttpMethods
 import com.first.basket.http.HttpResultSubscriber
 import com.first.basket.http.TransformUtils
-import com.first.basket.utils.LogUtils
-import kotlinx.android.synthetic.main.fragment_home.*
-import kotlinx.android.synthetic.main.item_recycler_home.view.*
+import kotlinx.android.synthetic.customer.fragment_home.*
+import kotlinx.android.synthetic.customer.item_recycler_home.view.*
 import org.jetbrains.anko.sdk25.coroutines.onClick
 
 /**
@@ -52,7 +50,7 @@ class HomeFragment : BaseFragment() {
         mAdapter = BaseRecyclerAdapter(R.layout.item_recycler_home, mDatas) { view, newsBean ->
             view.tvTitle.text = newsBean.title
             view.tvHeat.text = newsBean.heat + "查看"
-            ImageUtils.showImg(activity, newsBean.image, view.ivImg)
+//            ImageUtils.showImg(activity, newsBean.image, view.ivImg)
 
             view.onClick {
                 var intent = Intent(activity,WebViewActivity::class.java)

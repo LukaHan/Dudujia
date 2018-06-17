@@ -83,6 +83,7 @@
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/tvGongwei"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
@@ -124,12 +125,14 @@
             android:orientation="vertical">
 
             <ImageView
+                android:id="@+id/ivJCSQ"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:src="@mipmap/ic_mine_jkbg" />
 
             <TextView
+                android:id="@+id/tvJCSQ"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -148,12 +151,14 @@
             android:orientation="vertical">
 
             <ImageView
+                android:id="@+id/ivYYJC"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:src="@mipmap/ic_mine_wdac" />
 
             <TextView
+                android:id="@+id/tvYYJC"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -172,12 +177,14 @@
             android:orientation="vertical">
 
             <ImageView
+                android:id="@+id/ivJCGD"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:src="@mipmap/ic_mine_wddd" />
 
             <TextView
+                android:id="@+id/tvJCGD"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -196,13 +203,14 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/ivMore"
+                android:id="@+id/ivXSYJ"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:src="@mipmap/ic_mine_zhmx" />
 
             <TextView
+                android:id="@+id/tvXSYJ"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -230,12 +238,14 @@
             android:orientation="vertical">
 
             <ImageView
+                android:id="@+id/ivCSLB"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:src="@mipmap/ic_mine_cwdd" />
 
             <TextView
+                android:id="@+id/tvCSLB"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -323,6 +333,7 @@
 
 
     <TextView
+        android:id="@+id/tvGRFW"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
@@ -335,6 +346,7 @@
 
 
     <LinearLayout
+        android:id="@+id/llGRFW"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
@@ -444,6 +456,7 @@
         android:gravity="center_horizontal">
 
         <LinearLayout
+            android:id="@+id/llVersion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"

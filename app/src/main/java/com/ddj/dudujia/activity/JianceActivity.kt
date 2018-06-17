@@ -7,7 +7,6 @@ import android.os.Message
 import com.alipay.sdk.app.PayTask
 import com.ddj.dudujia.R
 import com.ddj.dudujia.base.BaseActivity
-import com.ddj.dudujia.base.BaseBean
 import com.ddj.dudujia.bean.AliBean
 import com.ddj.dudujia.bean.CodeBean
 import com.ddj.dudujia.bean.ReservationBean
@@ -15,8 +14,6 @@ import com.ddj.dudujia.common.CommonMethod
 import com.ddj.dudujia.common.StaticValue
 import com.ddj.dudujia.http.HttpResult
 import com.ddj.dudujia.utils.CountDownUtil
-import com.ddj.dudujia.utils.CountDownUtil.countDown
-import com.ddj.dudujia.utils.ImageUtils
 import com.ddj.dudujia.utils.SPUtil
 import com.ddj.dudujia.utils.alipay.PayResult
 import com.first.basket.http.HttpMethods
@@ -46,7 +43,7 @@ class JianceActivity : BaseActivity() {
                 .subscribe(object : HttpResultSubscriber<HttpResult<ReservationBean>>() {
                     override fun onNext(t: HttpResult<ReservationBean>) {
                         super.onNext(t)
-                        ImageUtils.showImg(this@JianceActivity, t.result.data.image, ivTitle)
+//                        ImageUtils.showImg(this@JianceActivity, t.result.data.image, ivTitle)
                         price = t.result.data.price
                     }
                 })

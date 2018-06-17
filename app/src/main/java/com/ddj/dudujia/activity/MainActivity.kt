@@ -10,8 +10,6 @@ import com.ddj.dudujia.fragment.CarFragment
 import com.ddj.dudujia.fragment.HomeFragment
 import com.ddj.dudujia.fragment.MineFragment
 import com.ddj.dudujia.fragment.ServiceFragment
-import com.ddj.dudujia.utils.CBase64Util
-import com.first.basket.utils.LogUtils
 import com.first.basket.utils.ToastUtil
 import com.github.ybq.android.spinkit.style.DoubleBounce
 import com.roughike.bottombar.BottomBar
@@ -49,14 +47,6 @@ class MainActivity : BaseActivity() {
         instance = this
         initView()
         initData()
-
-
-        val waph = "7bTl5rSstKW4o7S6tPHgtKy0wfP00dq2p7imtr7Z5vP40dq208W2pLimttX-5Pn7_-P7v7S6tPHktKy01_Lk8_j5tr7C27-2o6WmtLq0-eW0rLTX-PLk-f_ytLq0-eXg8-S0rLSguKa4p7S6tOC0rLSnuKa4pbS6tPr_tKy0p6-kuKegrrikuKS0urTl4bSstKKnp7S6tOX-tKy0oaWntLq09-bm_fPvtKy03aDU3dSgpNSh1N7X1N606w=="
-
-
-        LogUtils.d("解密wap：" + CBase64Util.decode(waph))
-
-
     }
 
     private fun initView() {
