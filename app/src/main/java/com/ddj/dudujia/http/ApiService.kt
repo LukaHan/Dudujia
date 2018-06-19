@@ -1,4 +1,4 @@
-package com.first.basket.http
+package com.ddj.dudujia.http
 
 import com.ddj.dudujia.base.BaseBean
 import com.ddj.dudujia.base.CarListBean

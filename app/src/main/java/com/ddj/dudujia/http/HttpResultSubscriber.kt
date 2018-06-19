@@ -1,7 +1,8 @@
-package com.first.basket.http
+package com.ddj.dudujia.http
 
-import com.first.basket.utils.LogUtils
-import com.first.basket.utils.ToastUtil
+import com.ddj.dudujia.utils.LogUtils
+import com.ddj.dudujia.utils.ToastUtil
+
 import rx.Subscriber
 
 /**

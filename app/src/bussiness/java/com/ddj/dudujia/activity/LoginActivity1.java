@@ -7,8 +7,9 @@ import android.widget.EditText;
 import com.ddj.dudujia.R;
 import com.ddj.dudujia.base.BaseActivity;
 import com.ddj.dudujia.presenter.LoginPresenter;
+import com.ddj.dudujia.utils.ToastUtil;
 import com.ddj.dudujia.view.ICodeLoginView;
-import com.first.basket.utils.ToastUtil;
+;
 
 import org.jetbrains.annotations.Nullable;
 

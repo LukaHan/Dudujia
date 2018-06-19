@@ -1,6 +1,5 @@
 package com.ddj.dudujia.activity
 
-import android.Manifest
 import android.app.Dialog
 import android.content.Intent
 import android.graphics.Bitmap
@@ -8,17 +7,13 @@ import android.graphics.pdf.PdfDocument
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
-import android.support.design.widget.Snackbar
-import android.support.v4.app.ActivityCompat
 import android.support.v4.content.FileProvider
 import android.support.v7.app.AlertDialog
-import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.SimpleAdapter
-import android.widget.Toast
 import com.ddj.dudujia.R
-import com.ddj.dudujia.app.BaseApplication
+import com.ddj.dudujia.app.SampleApplicationLike
 import com.ddj.dudujia.base.BaseActivity
 import com.ddj.dudujia.bean.HealthReportBean
 import com.ddj.dudujia.common.CommonMethod
@@ -29,10 +24,10 @@ import com.ddj.dudujia.rxjava.RxjavaUtil
 import com.ddj.dudujia.rxjava.UITask
 import com.ddj.dudujia.view.CustomProgressDialog
 import com.ddj.dudujia.view.OnlineInfoView
-import com.first.basket.http.HttpMethods
-import com.first.basket.http.HttpResultSubscriber
-import com.first.basket.http.TransformUtils
-import com.first.basket.utils.ToastUtil
+import com.ddj.dudujia.http.HttpMethods
+import com.ddj.dudujia.http.HttpResultSubscriber
+import com.ddj.dudujia.http.TransformUtils
+import com.ddj.dudujia.utils.ToastUtil
 import kotlinx.android.synthetic.main.activity_health_report.*
 import kotlinx.android.synthetic.main.layout_insurance.*
 import kotlinx.android.synthetic.main.layout_report_title.*
@@ -112,7 +107,7 @@ class HealthReportActivity : BaseActivity() {
                 CommonMethod.savePic(mBitmap, path)
                 mBitmap.recycle()
 //                mBitmap = null
-                BaseApplication.getInstance().share(path)
+                SampleApplicationLike.getInstance().share(path)
             }
 
         })

@@ -15,10 +15,11 @@ import com.ddj.dudujia.fragment.BaoyangListFragment
 import com.ddj.dudujia.fragment.IlleagalListFragment
 import com.ddj.dudujia.fragment.JianceListFragment
 import com.ddj.dudujia.http.HttpResult
-import com.first.basket.http.HttpMethods
-import com.first.basket.http.HttpResultSubscriber
-import com.first.basket.http.TransformUtils
-import com.first.basket.utils.ToastUtil
+import com.ddj.dudujia.http.HttpMethods
+import com.ddj.dudujia.http.HttpResultSubscriber
+import com.ddj.dudujia.http.TransformUtils
+import com.ddj.dudujia.utils.ToastUtil
+
 import kotlinx.android.synthetic.main.activity_car_detail_list.*
 
 /**

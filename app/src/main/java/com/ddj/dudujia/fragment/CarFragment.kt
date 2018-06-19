@@ -16,9 +16,9 @@ import com.ddj.dudujia.common.CommonMethod
 import com.ddj.dudujia.common.StaticValue
 import com.ddj.dudujia.http.HttpResult
 import com.ddj.dudujia.utils.SPUtil
-import com.first.basket.http.HttpMethods
-import com.first.basket.http.HttpResultSubscriber
-import com.first.basket.http.TransformUtils
+import com.ddj.dudujia.http.HttpMethods
+import com.ddj.dudujia.http.HttpResultSubscriber
+import com.ddj.dudujia.http.TransformUtils
 import kotlinx.android.synthetic.main.fragment_car.*
 import org.jetbrains.anko.sdk25.coroutines.onClick
 

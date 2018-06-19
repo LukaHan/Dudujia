@@ -1,4 +1,4 @@
-package com.first.basket.http
+package com.ddj.dudujia.http
 
 import rx.Observable
 import rx.android.schedulers.AndroidSchedulers

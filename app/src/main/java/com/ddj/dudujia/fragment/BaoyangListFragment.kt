@@ -9,7 +9,8 @@ import com.ddj.dudujia.R
 import com.ddj.dudujia.base.BaseFragment
 import com.ddj.dudujia.base.BaseRecyclerAdapter
 import com.ddj.dudujia.bean.CarDetailBean
-import com.first.basket.utils.ToastUtil
+import com.ddj.dudujia.utils.ToastUtil
+
 import kotlinx.android.synthetic.main.fragment_baoyang_list.*
 import kotlinx.android.synthetic.main.item_recycler_baoyang.view.*
 

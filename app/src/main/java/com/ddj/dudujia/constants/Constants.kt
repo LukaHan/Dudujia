@@ -1,4 +1,4 @@
-package com.first.basket.constants
+package com.ddj.dudujia.constants
 
 /**
  * Created by hanshaobo on 02/09/2017.

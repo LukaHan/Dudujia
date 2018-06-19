@@ -14,9 +14,9 @@ import com.ddj.dudujia.base.BaseFragment
 import com.ddj.dudujia.base.BaseRecyclerAdapter
 import com.ddj.dudujia.bean.HomeBean
 import com.ddj.dudujia.http.HttpResult
-import com.first.basket.http.HttpMethods
-import com.first.basket.http.HttpResultSubscriber
-import com.first.basket.http.TransformUtils
+import com.ddj.dudujia.http.HttpMethods
+import com.ddj.dudujia.http.HttpResultSubscriber
+import com.ddj.dudujia.http.TransformUtils
 import kotlinx.android.synthetic.customer.fragment_home.*
 import kotlinx.android.synthetic.customer.item_recycler_home.view.*
 import org.jetbrains.anko.sdk25.coroutines.onClick

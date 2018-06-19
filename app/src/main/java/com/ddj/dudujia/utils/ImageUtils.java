@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.ddj.dudujia.common.GlideApp;
 import com.ddj.dudujia.common.GlideOptions;
-import com.first.basket.constants.Constants;
+import com.ddj.dudujia.constants.Constants;
 
 /**
  * Created by Luka on 2016/3/30.

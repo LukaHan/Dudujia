@@ -1,6 +1,6 @@
-package com.first.basket.http
+package com.ddj.dudujia.http
 
-import com.first.basket.constants.Constants
+import com.ddj.dudujia.constants.Constants
 import com.google.gson.GsonBuilder
 import com.grapesnberries.curllogger.CurlLoggerInterceptor
 import okhttp3.OkHttpClient

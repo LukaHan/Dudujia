@@ -1,9 +1,13 @@
 package com.ddj.dudujia.app;
 
+import android.annotation.TargetApi;
 import android.app.ActivityManager;
+import android.app.Application;
 import android.content.Context;
+import android.content.Intent;
+import android.os.Build;
 import android.os.Handler;
-import android.support.multidex.MultiDexApplication;
+import android.support.multidex.MultiDex;
 import android.util.Log;
 
 import com.ddj.dudujia.R;
@@ -13,42 +17,46 @@ import com.fm.openinstall.listener.AppInstallListener;
 import com.fm.openinstall.model.AppData;
 import com.fm.openinstall.model.Error;
 import com.tencent.bugly.Bugly;
-import com.tencent.bugly.crashreport.CrashReport;
+import com.tencent.bugly.beta.Beta;
+import com.tencent.tinker.loader.app.DefaultApplicationLike;
 
 /**
  * Created by hanshaobo on 15/10/2017.
  */
 
-public class BaseApplication extends MultiDexApplication {
+public class SampleApplicationLike extends DefaultApplicationLike {
     private static int mMainThreadId;// 主线程Id
     private static Handler mHandler;// Handler对象
 
-    private static BaseApplication instance;
+    private static SampleApplicationLike instance;
+
+    public SampleApplicationLike(Application application, int tinkerFlags, boolean tinkerLoadVerifyFlag, long applicationStartElapsedTime, long applicationStartMillisTime, Intent tinkerResultIntent) {
+        super(application, tinkerFlags, tinkerLoadVerifyFlag, applicationStartElapsedTime, applicationStartMillisTime, tinkerResultIntent);
+    }
 
     @Override
     public void onCreate() {
         super.onCreate();
         this.instance = this;
-        BaseApplication.setMainThreadId(android.os.Process.myTid());
-        BaseApplication.setHandler(new Handler());
+        SampleApplicationLike.setMainThreadId(android.os.Process.myTid());
+        SampleApplicationLike.setHandler(new Handler());
 
         //初始化sp
-        SPUtil.init(this);
-        Bugly.init(getApplicationContext(), getString(R.string.bugly), true);
+        SPUtil.init(getApplication());
+        Bugly.init(getApplication(), getApplication().getString(R.string.bugly), true);
 
         if(isMainProcess()){
-            OpenInstall.init(this);
+//            OpenInstall.init(getApplication());
         }
-        Bugly.init(getApplicationContext(), getString(R.string.bugly), true);
-        initOpen();
+//        initOpen();
     }
 
     public boolean isMainProcess() {
         int pid = android.os.Process.myPid();
-        ActivityManager activityManager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
+        ActivityManager activityManager = (ActivityManager) getApplication().getSystemService(Context.ACTIVITY_SERVICE);
         for (ActivityManager.RunningAppProcessInfo appProcess : activityManager.getRunningAppProcesses()) {
             if (appProcess.pid == pid) {
-                return getApplicationInfo().packageName.equals(appProcess.processName);
+                return getApplication().getApplicationInfo().packageName.equals(appProcess.processName);
             }
         }
         return false;
@@ -71,7 +79,7 @@ public class BaseApplication extends MultiDexApplication {
         });
     }
 
-    public static BaseApplication getInstance() {
+    public static SampleApplicationLike getInstance() {
         return instance;
     }
 
@@ -80,7 +88,7 @@ public class BaseApplication extends MultiDexApplication {
     }
 
     public static void setMainThreadId(int mMainThreadId) {
-        BaseApplication.mMainThreadId = mMainThreadId;
+        SampleApplicationLike.mMainThreadId = mMainThreadId;
     }
 
     public static Handler getHandler() {
@@ -88,7 +96,7 @@ public class BaseApplication extends MultiDexApplication {
     }
 
     public static void setHandler(Handler mHandler) {
-        BaseApplication.mHandler = mHandler;
+        SampleApplicationLike.mHandler = mHandler;
     }
 
 
@@ -111,4 +119,23 @@ public class BaseApplication extends MultiDexApplication {
 //        // 启动分享GUI
 //        oks.show(this);
     }
+
+    @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
+    @Override
+    public void onBaseContextAttached(Context base) {
+        super.onBaseContextAttached(base);
+        // you must install multiDex whatever tinker is installed!
+        MultiDex.install(base);
+
+        // 安装tinker
+        // TinkerManager.installTinker(this); 替换成下面Bugly提供的方法
+        Beta.installTinker(this);
+    }
+
+    @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
+    public void registerActivityLifecycleCallback(Application.ActivityLifecycleCallbacks callbacks) {
+        getApplication().registerActivityLifecycleCallbacks(callbacks);
+    }
+
+
 }

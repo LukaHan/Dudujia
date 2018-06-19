@@ -15,9 +15,9 @@ import android.widget.Toast;
 
 import com.alipay.sdk.app.AuthTask;
 import com.alipay.sdk.app.PayTask;
+import com.ddj.dudujia.constants.Constants;
 import com.ddj.dudujia.utils.alipay.OrderInfoUtil2_0;
 import com.ddj.dudujia.utils.alipay.PayResult;
-import com.first.basket.constants.Constants;
 
 import java.util.Map;
 

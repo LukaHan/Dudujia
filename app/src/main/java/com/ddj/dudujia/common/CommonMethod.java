@@ -24,8 +24,9 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.ScrollView;
 
 import com.ddj.dudujia.utils.SPUtil;
+import com.ddj.dudujia.utils.ToastUtil;
 import com.ddj.dudujia.utils.UIUtils;
-import com.first.basket.utils.ToastUtil;
+;
 
 import java.io.File;
 import java.io.FileNotFoundException;

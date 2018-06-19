@@ -10,7 +10,8 @@ import com.ddj.dudujia.common.StaticValue
 import com.ddj.dudujia.rxjava.RxjavaUtil
 import com.ddj.dudujia.rxjava.UITask
 import com.ddj.dudujia.utils.SPUtil
-import com.first.basket.utils.ToastUtil
+import com.ddj.dudujia.utils.ToastUtil
+
 import kotlinx.android.synthetic.main.activity_setting.*
 import org.jetbrains.anko.sdk25.coroutines.onClick
 import java.util.concurrent.TimeUnit

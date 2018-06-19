@@ -10,7 +10,8 @@ import com.ddj.dudujia.fragment.CarFragment
 import com.ddj.dudujia.fragment.HomeFragment
 import com.ddj.dudujia.fragment.MineFragment
 import com.ddj.dudujia.fragment.ServiceFragment
-import com.first.basket.utils.ToastUtil
+import com.ddj.dudujia.utils.ToastUtil
+
 import com.github.ybq.android.spinkit.style.DoubleBounce
 import com.roughike.bottombar.BottomBar
 import com.roughike.bottombar.BottomBarTab

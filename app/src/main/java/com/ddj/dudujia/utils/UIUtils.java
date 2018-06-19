@@ -3,7 +3,7 @@ package com.ddj.dudujia.utils;
 import android.content.Context;
 import android.os.Handler;
 
-import com.ddj.dudujia.app.BaseApplication;
+import com.ddj.dudujia.app.SampleApplicationLike;
 
 /**
  * Created by hanshaobo on 15/10/2017.
@@ -11,7 +11,7 @@ import com.ddj.dudujia.app.BaseApplication;
 
 public class UIUtils {
     public static Context getContext() {
-        return BaseApplication.getInstance();
+        return SampleApplicationLike.getInstance().getApplication();
     }
 
     // 判断是否是主线的方法
@@ -31,12 +31,12 @@ public class UIUtils {
     }
 
     public static int getMainThreadId() {
-        return BaseApplication.getMainThreadId();
+        return SampleApplicationLike.getMainThreadId();
     }
 
 
     public static Handler getHandler() {
-        return BaseApplication.getHandler();
+        return SampleApplicationLike.getHandler();
     }
 
 }

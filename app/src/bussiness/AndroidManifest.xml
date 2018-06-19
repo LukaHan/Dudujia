@@ -6,7 +6,6 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-        android:name="com.ddj.dudujia.app.BaseApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_logo"
         android:label="@string/app_name"
@@ -15,8 +14,6 @@
         android:theme="@style/AppTheme">
 
         <activity android:name=".activity.LoginActivity" />
-        <activity android:name=".activity.LoginActivity1" />
-        <activity android:name="com.ddj.dudujia.activity.CheckYuyueActivity" />
         <activity android:name="com.ddj.dudujia.activity.CheckDingdanActivity" />
     </application>
 

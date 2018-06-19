@@ -4,8 +4,8 @@ import android.os.Bundle;
 
 import com.ddj.dudujia.R;
 import com.ddj.dudujia.base.BaseActivity;
+import com.ddj.dudujia.utils.LogUtils;
 import com.ddj.dudujia.utils.PhoneInfoUtils;
-import com.first.basket.utils.LogUtils;
 
 import org.jetbrains.annotations.Nullable;
 
