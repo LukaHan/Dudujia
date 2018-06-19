@@ -2,10 +2,8 @@ package com.ddj.dudujia.activity
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.v4.widget.SwipeRefreshLayout
 import android.support.v7.widget.LinearLayoutManager
 import android.text.TextUtils
-import android.view.TextureView
 import com.ddj.dudujia.R
 import com.ddj.dudujia.base.BaseActivity
 import com.ddj.dudujia.base.BaseRecyclerAdapter
@@ -17,7 +15,7 @@ import com.ddj.dudujia.http.HttpResultSubscriber
 import com.ddj.dudujia.http.TransformUtils
 import com.ddj.dudujia.utils.ToastUtil
 
-import kotlinx.android.synthetic.main.activity__list_report.*
+import kotlinx.android.synthetic.main.activity_list_report.*
 import kotlinx.android.synthetic.main.item_recycler_jiance.view.*
 import org.jetbrains.anko.sdk25.coroutines.onClick
 import org.jetbrains.anko.textColor
@@ -31,7 +29,7 @@ class OfflineReportActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity__list_report)
+        setContentView(R.layout.activity_list_report)
         initView()
         initData()
     }
@@ -82,8 +80,8 @@ class OfflineReportActivity : BaseActivity() {
 
             view.onClick {
                 if (!TextUtils.isEmpty(dataBean.reportid)) {
-                    var intent = Intent(this@OfflineReportActivity, JianceCenterActivity::class.java)
-                    intent.putExtra("reportid", dataBean.reportid)
+                    var intent = Intent(this@OfflineReportActivity, HealthReportActivity::class.java)
+                    intent.putExtra("orderid", dataBean.orderid)
                     startActivity(intent)
                 }else{
                     ToastUtil.showToast("检测时尚未检测，请耐心等候!")

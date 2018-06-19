@@ -17,6 +17,7 @@ import com.ddj.dudujia.app.SampleApplicationLike
 import com.ddj.dudujia.base.BaseActivity
 import com.ddj.dudujia.bean.HealthReportBean
 import com.ddj.dudujia.common.CommonMethod
+import com.ddj.dudujia.constants.Constants
 import com.ddj.dudujia.http.HttpResult
 import com.ddj.dudujia.rxjava.CommonRxTask
 import com.ddj.dudujia.rxjava.IOTask
@@ -27,6 +28,7 @@ import com.ddj.dudujia.view.OnlineInfoView
 import com.ddj.dudujia.http.HttpMethods
 import com.ddj.dudujia.http.HttpResultSubscriber
 import com.ddj.dudujia.http.TransformUtils
+import com.ddj.dudujia.utils.SPUtil
 import com.ddj.dudujia.utils.ToastUtil
 import kotlinx.android.synthetic.main.activity_health_report.*
 import kotlinx.android.synthetic.main.layout_insurance.*
@@ -271,7 +273,8 @@ class HealthReportActivity : BaseActivity() {
     }
 
     private fun initData() {
-        HttpMethods.createService().getHealthReport("get_healthreport", "100000", "100000")
+        var orderid  = intent.getStringExtra("orderid")
+        HttpMethods.createService().getHealthReport("get_healthreport", CommonMethod.getUserId(), orderid)
                 .compose(TransformUtils.defaultSchedulers())
                 .subscribe(object : HttpResultSubscriber<HttpResult<HealthReportBean>>() {
                     override fun onNext(t: HttpResult<HealthReportBean>) {

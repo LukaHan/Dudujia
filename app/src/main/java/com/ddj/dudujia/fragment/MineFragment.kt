@@ -59,7 +59,7 @@ class MineFragment : BaseFragment() {
 
         llJKBG.onClick {
             if (CommonMethod.isLogin()) {
-                startActivity(Intent(activity, HealthReportActivity::class.java))
+                startActivity(Intent(activity, OfflineReportActivity::class.java))
             } else {
                 var intent = Intent(activity, LoginActivity::class.java)
                 startActivityForResult(intent, 102)

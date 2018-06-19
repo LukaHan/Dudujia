@@ -1,11 +1,13 @@
 package com.ddj.dudujia.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.KeyEvent
 import android.view.View
 import com.ddj.dudujia.R
 import com.ddj.dudujia.base.BaseActivity
 import com.ddj.dudujia.base.BaseFragment
+import com.ddj.dudujia.common.CommonMethod
 import com.ddj.dudujia.fragment.CarFragment
 import com.ddj.dudujia.fragment.HomeFragment
 import com.ddj.dudujia.fragment.MineFragment
@@ -44,6 +46,9 @@ class MainActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        if (!CommonMethod.isCusVer()) {
+            startActivity(Intent(this, MainBusActivity::class.java))
+        }
         setContentView(R.layout.activity_main)
         instance = this
         initView()

@@ -90,7 +90,7 @@ interface ApiService {
     //检查VIN是否可查
     @FormUrlEncoded
     @POST("ClientAPI.php")
-    fun getHealthReport(@Field("action") action: String, @Field("userid") userid: String, @Field("reportid") reportid: String): Observable<HttpResult<HealthReportBean>>
+    fun getHealthReport(@Field("action") action: String, @Field("userid") userid: String, @Field("orderid") reportid: String): Observable<HttpResult<HealthReportBean>>
 
 
     //java首页

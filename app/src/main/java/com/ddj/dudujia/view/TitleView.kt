@@ -53,7 +53,9 @@ class TitleView : FrameLayout {
                         R.styleable.TitleView_titleMoreText ->
                             mTitleMoreText = typedArray.getString(it)
                         R.styleable.TitleView_titleMoreDrawable ->
-                            mTitleMoreDrawable = typedArray.getDrawable(it)
+                            if(typedArray.getDrawable(it)!=null){
+                                mTitleMoreDrawable =typedArray.getDrawable(it)
+                            }
                         R.styleable.TitleView_titleMoreSecondDrawable ->
                             mTitleMoreSecondDrawable = typedArray.getDrawable(it)
                         R.styleable.TitleView_titleBackground ->
