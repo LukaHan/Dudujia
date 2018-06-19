@@ -29,6 +29,38 @@
 
     <ImageView
         android:id="@+id/ivImg"
+        android:scaleType="fitXY"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="240dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="22dp"
+        android:gravity="center_vertical"
+        android:layout_marginTop="30dp">
+
+        <View
+            android:layout_width="4dp"
+            android:layout_height="22dp"
+            android:background="@color/yellow" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:gravity="center"
+            android:text="检测时照片"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/ivImg1"
+        android:scaleType="fitXY"
         android:layout_marginBottom="20dp"
         android:layout_marginTop="33dp"
         android:layout_marginRight="16dp"

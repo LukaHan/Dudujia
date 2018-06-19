@@ -14,6 +14,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.SimpleAdapter
 import com.ddj.dudujia.R
+import com.ddj.dudujia.R.id.*
 import com.ddj.dudujia.app.SampleApplicationLike
 import com.ddj.dudujia.base.BaseActivity
 import com.ddj.dudujia.bean.HealthReportBean
@@ -35,7 +36,9 @@ import com.ddj.dudujia.utils.ToastUtil
 import kotlinx.android.synthetic.main.activity_health_report.*
 import kotlinx.android.synthetic.main.layout_car_photo.*
 import kotlinx.android.synthetic.main.layout_insurance.*
+import kotlinx.android.synthetic.main.layout_jianceshi.*
 import kotlinx.android.synthetic.main.layout_report_title.*
+import org.jetbrains.anko.backgroundColor
 import org.jetbrains.anko.sdk25.coroutines.onClick
 import java.io.File
 import java.io.FileOutputStream
@@ -276,7 +279,7 @@ class HealthReportActivity : BaseActivity() {
     }
 
     private fun initData() {
-        var orderid  = intent.getStringExtra("orderid")
+        var orderid = intent.getStringExtra("orderid")
         HttpMethods.createService().getHealthReport("get_healthreport", CommonMethod.getUserId(), orderid)
                 .compose(TransformUtils.defaultSchedulers())
                 .subscribe(object : HttpResultSubscriber<HttpResult<HealthReportBean>>() {
@@ -298,8 +301,8 @@ class HealthReportActivity : BaseActivity() {
         tvCSYS.text = data.color
         tvPFBZ.text = data.emission
         tvPL.text = data.displacement
-        tvEffectivetime.text = "保障承诺生效时间："+data.effectivetime
-        tvFailuretime.text = "保障承诺到期时间："+data.failuretime
+        tvEffectivetime.text = "保障承诺生效时间：" + data.effectivetime
+        tvFailuretime.text = "保障承诺到期时间：" + data.failuretime
 
 
         setSummaryData(data)
@@ -318,7 +321,26 @@ class HealthReportActivity : BaseActivity() {
 //            ll267Container.addView(onlineInfo)
 //        }
 
-        ImageUtils.showImg(this,Constants.BASE_IMG_URL+"reportimage/"+data.images.image1,ivImg)
+        ImageUtils.showImg(this, Constants.BASE_IMG_URL + "reportimage/" + data.images.image1, ivImg)
+        ImageUtils.showImg(this, Constants.BASE_IMG_URL + "reportimage/" + data.images.image2, ivImg1)
+        when (data.carhistory.carhistorylevel) {
+            "1" -> {
+                tvBaoyangTime.text = "高"
+                tvBaoyangTime.backgroundColor = resources.getColor(R.color.green)
+            }
+            "2" -> {
+                tvBaoyangTime.text = "中"
+                tvBaoyangTime.backgroundColor = resources.getColor(R.color.yellow)
+            }
+            "3" -> {
+                tvBaoyangTime.text = "低"
+                tvBaoyangTime.backgroundColor = resources.getColor(R.color.red56)
+            }
+        }
+        tvOpinion.text = data.testeropinion.opinion
+        tvName.text = data.tester.testername
+        ImageUtils.showImg(this,Constants.BASE_IMG_URL + "reportimage/" + data.images.image1,ivAvatar)
+        tvNote.text =  data.tester.testernote
     }
 
     private fun setInsurance(data: HealthReportBean.DataBean.InsuranceBean) {
@@ -339,10 +361,10 @@ class HealthReportActivity : BaseActivity() {
         for (i in 0 until data.summary.size) {
             var map = HashMap<String, Any>()
 //            map.put("t", data.summary[i].times as Any)
-            if(TextUtils.isEmpty(data.summary[i].times)){
+            if (TextUtils.isEmpty(data.summary[i].times)) {
                 map.put("item", data.summary[i].item as Any)
-            }else{
-                map.put("item", (data.summary[i].item+"("+data.summary[i].times+")") as Any)
+            } else {
+                map.put("item", (data.summary[i].item + "(" + data.summary[i].times + ")") as Any)
             }
 
             when (data.summary[i].level) {

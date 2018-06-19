@@ -22,6 +22,38 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:gravity="center"
+            android:text="AIS专家现场检测意见"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tvOpinion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="30dp"
+        android:text="AIS专家现场检测意见"
+        android:textColor="@color/black"
+        android:textSize="14sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="22dp"
+        android:layout_marginTop="30dp"
+        android:gravity="center_vertical">
+
+        <View
+            android:layout_width="4dp"
+            android:layout_height="22dp"
+            android:background="@color/yellow" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:gravity="center"
             android:text="检测师"
             android:textColor="@color/black"
             android:textSize="20sp" />
@@ -35,7 +67,7 @@
         android:layout_marginRight="16dp"
         android:layout_marginTop="30dp">
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/ivAvatar"
             android:layout_width="48dp"
             android:layout_height="48dp"
@@ -59,11 +91,12 @@
             android:layout_marginBottom="2dp"
             android:layout_marginLeft="15dp"
             android:layout_toRightOf="@id/ivAvatar"
-            android:text="已完成检测：2982辆"
+            android:text=""
             android:textColor="@color/black"
             android:textSize="14sp" />
 
         <ImageView
+            android:visibility="gone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
@@ -72,10 +105,12 @@
     </RelativeLayout>
 
     <TextView
+        android:id="@+id/tvNote"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:layout_marginLeft="79dp"
+        android:layout_marginRight="16dp"
         android:layout_marginTop="20dp"
         android:text="AIS特级认证检测员；国家高级二手车评估师"
         android:textColor="@color/black"
@@ -84,6 +119,7 @@
     <include layout="@layout/layout_gap" />
 
     <LinearLayout
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="66dp"
         android:orientation="vertical">
@@ -115,11 +151,11 @@
         android:orientation="vertical">
 
         <ImageView
-            android:layout_marginBottom="17dp"
-            android:layout_marginTop="32dp"
-            android:layout_gravity="center_horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="17dp"
+            android:layout_marginTop="32dp"
             android:src="@mipmap/ic_rep_logo_bottom" />
     </LinearLayout>
 </LinearLayout>

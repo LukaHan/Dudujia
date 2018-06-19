@@ -75,7 +75,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
                     android:gravity="center"
-                    android:text="线上信息摘要"
+                    android:text="历史维修以及保养信息"
                     android:textColor="@color/black"
                     android:textSize="20sp" />
 
@@ -89,6 +89,32 @@
                     android:textColor="@color/black"
                     android:textSize="14sp" />
             </RelativeLayout>
+
+            <LinearLayout
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="保养频次：      "
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp"
+                    android:id="@+id/tvBaoyangTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="高"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+            </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/llOnlineContainer"
@@ -115,7 +141,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
                     android:gravity="center"
-                    android:text="AIS267项现场检测摘要"
+                    android:text="AIS专家检测"
                     android:textColor="@color/black"
                     android:textSize="20sp" />
 
