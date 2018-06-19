@@ -329,7 +329,7 @@ class HealthReportActivity : BaseActivity() {
                 tvBaoyangTime.backgroundColor = resources.getColor(R.color.green)
             }
             "2" -> {
-                tvBaoyangTime.text = "中"
+                tvBaoyangTime.text = "一般"
                 tvBaoyangTime.backgroundColor = resources.getColor(R.color.yellow)
             }
             "3" -> {

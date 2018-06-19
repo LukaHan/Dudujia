@@ -30,8 +30,8 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="22dp"
-                android:gravity="center_vertical"
-                android:layout_marginTop="30dp">
+                android:layout_marginTop="30dp"
+                android:gravity="center_vertical">
 
                 <View
                     android:layout_width="4dp"
@@ -62,8 +62,8 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="22dp"
-                android:gravity="center_vertical"
-                android:layout_marginTop="30dp">
+                android:layout_marginTop="30dp"
+                android:gravity="center_vertical">
 
                 <View
                     android:layout_width="4dp"
@@ -91,11 +91,12 @@
             </RelativeLayout>
 
             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="30dp"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:orientation="horizontal">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -104,13 +105,13 @@
                     android:textSize="14sp" />
 
                 <TextView
-                    android:paddingLeft="10dp"
-                    android:paddingRight="10dp"
-                    android:paddingTop="2dp"
-                    android:paddingBottom="2dp"
                     android:id="@+id/tvBaoyangTime"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:paddingBottom="2dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="2dp"
                     android:text="高"
                     android:textColor="@color/black"
                     android:textSize="14sp" />
@@ -118,18 +119,18 @@
 
             <LinearLayout
                 android:id="@+id/llOnlineContainer"
-                android:orientation="vertical"
-                android:layout_marginBottom="20dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:orientation="vertical" />
 
             <include layout="@layout/layout_gap_8" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="22dp"
-                android:gravity="center_vertical"
-                android:layout_marginTop="30dp">
+                android:layout_marginTop="30dp"
+                android:gravity="center_vertical">
 
                 <View
                     android:layout_width="4dp"
@@ -158,12 +159,13 @@
 
             <LinearLayout
                 android:id="@+id/ll267Container"
-                android:orientation="vertical"
-                android:layout_marginBottom="20dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:orientation="vertical" />
 
             <include layout="@layout/layout_car_photo" />
+
             <include layout="@layout/layout_jianceshi" />
 
         </LinearLayout>

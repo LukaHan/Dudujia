@@ -74,6 +74,8 @@
         <activity android:name=".activity.HealthReportActivity" />
         <activity android:name=".activity.ReportBasicActivity" />
         <activity android:name=".activity.CheckDingdanActivity" />
+        <activity android:name=".activity.MainBusActivity" />
+        <activity android:name=".activity.MineBusActivity" />
     </application>
 
 </manifest>

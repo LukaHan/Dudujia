@@ -47,7 +47,8 @@ class MainActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (!CommonMethod.isCusVer()) {
-            startActivity(Intent(this, MainBusActivity::class.java))
+
+            myStartActivity(Intent(this, MainBusActivity::class.java), true)
         }
         setContentView(R.layout.activity_main)
         instance = this
