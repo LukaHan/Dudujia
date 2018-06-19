@@ -36,7 +36,9 @@ class CarFragment : BaseFragment() {
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initView()
-        initData()
+        if (llNoCar != null) {
+            initData()
+        }
     }
 
     private fun initView() {

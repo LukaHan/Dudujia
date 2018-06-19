@@ -28,6 +28,7 @@
     </RelativeLayout>
 
     <ImageView
+        android:id="@+id/ivImg"
         android:layout_marginBottom="20dp"
         android:layout_marginTop="33dp"
         android:layout_marginRight="16dp"

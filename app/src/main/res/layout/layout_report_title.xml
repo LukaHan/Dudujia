@@ -49,8 +49,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="6dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="54dp"
             android:src="@mipmap/ic_rep_baozhang" />
     </RelativeLayout>
 
@@ -213,11 +212,29 @@
         </RelativeLayout>
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/tvEffectivetime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="排放标准"
+        android:textColor="@color/black"
+        android:textSize="12sp" />
+    <TextView
+        android:id="@+id/tvFailuretime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="排放标准"
+        android:textColor="@color/black"
+        android:textSize="12sp" />
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="30dp"
         android:layout_marginTop="30dp"
         android:background="@color/grayF4"
+        android:visibility="gone"
         android:gravity="center">
 
         <TextView

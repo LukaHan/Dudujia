@@ -9,6 +9,7 @@ import android.os.Build
 import android.os.Bundle
 import android.support.v4.content.FileProvider
 import android.support.v7.app.AlertDialog
+import android.text.TextUtils
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.SimpleAdapter
@@ -28,9 +29,11 @@ import com.ddj.dudujia.view.OnlineInfoView
 import com.ddj.dudujia.http.HttpMethods
 import com.ddj.dudujia.http.HttpResultSubscriber
 import com.ddj.dudujia.http.TransformUtils
+import com.ddj.dudujia.utils.ImageUtils
 import com.ddj.dudujia.utils.SPUtil
 import com.ddj.dudujia.utils.ToastUtil
 import kotlinx.android.synthetic.main.activity_health_report.*
+import kotlinx.android.synthetic.main.layout_car_photo.*
 import kotlinx.android.synthetic.main.layout_insurance.*
 import kotlinx.android.synthetic.main.layout_report_title.*
 import org.jetbrains.anko.sdk25.coroutines.onClick
@@ -295,6 +298,8 @@ class HealthReportActivity : BaseActivity() {
         tvCSYS.text = data.color
         tvPFBZ.text = data.emission
         tvPL.text = data.displacement
+        tvEffectivetime.text = "保障承诺生效时间："+data.effectivetime
+        tvFailuretime.text = "保障承诺到期时间："+data.failuretime
 
 
         setSummaryData(data)
@@ -306,12 +311,14 @@ class HealthReportActivity : BaseActivity() {
             onlineInfo.setItemData(item.item, item.level, item.project)
             llOnlineContainer.addView(onlineInfo)
         }
-        for (i in 0 until data.testing.testingitems.size) {
-            var item = data.testing.testingitems[i]
-            var onlineInfo = OnlineInfoView(this)
-            onlineInfo.setItemData(item.item, item.level, item.project)
-            ll267Container.addView(onlineInfo)
-        }
+//        for (i in 0 until data.testing.testingitems.size) {
+//            var item = data.testing.testingitems[i]
+//            var onlineInfo = OnlineInfoView(this)
+//            onlineInfo.setItemData(item.item, item.level, item.project)
+//            ll267Container.addView(onlineInfo)
+//        }
+
+        ImageUtils.showImg(this,Constants.BASE_IMG_URL+"reportimage/"+data.images.image1,ivImg)
     }
 
     private fun setInsurance(data: HealthReportBean.DataBean.InsuranceBean) {
@@ -331,8 +338,13 @@ class HealthReportActivity : BaseActivity() {
         var dataList = ArrayList<Map<String, Any>>()
         for (i in 0 until data.summary.size) {
             var map = HashMap<String, Any>()
-            map.put("t", data.summary[i].times as Any)
-            map.put("item", data.summary[i].item as Any)
+//            map.put("t", data.summary[i].times as Any)
+            if(TextUtils.isEmpty(data.summary[i].times)){
+                map.put("item", data.summary[i].item as Any)
+            }else{
+                map.put("item", (data.summary[i].item+"("+data.summary[i].times+")") as Any)
+            }
+
             when (data.summary[i].level) {
                 "1" -> {
                     map.put("img", R.mipmap.ic_rep_tan1)
