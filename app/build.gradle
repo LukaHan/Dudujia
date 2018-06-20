@@ -38,10 +38,10 @@ android {
             keyPassword "czhhb1"
         }
         bussinessKey {
-            storeFile file("keys/customer.keystore")
-            storePassword "czhhb1"
+            storeFile file("keys/business.keystore")
+            storePassword "czhhb2"
             keyAlias "key0"
-            keyPassword "czhhb1"
+            keyPassword "czhhb2"
         }
     }
     //多版本管理
@@ -53,6 +53,8 @@ android {
             signingConfig customerKey
             applicationId "com.ddj.dudujia"
             flavorDimensions '2'
+            versionCode 2
+            versionName "1.0.2"
 
         }
 
@@ -60,11 +62,10 @@ android {
             signingConfig bussinessKey
             applicationId "com.staff.dudujia"
             flavorDimensions '1'
-
+            versionCode 1
+            versionName "1.0.1"
         }
     }
-
-
 }
 
 dependencies {
